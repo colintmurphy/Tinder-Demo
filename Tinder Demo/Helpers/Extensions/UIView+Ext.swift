@@ -10,22 +10,21 @@ import UIKit
 //swiftlint:disable trailing_whitespace
 
 extension UIView {
-
-    func addSubviewWithEdgeConstraints(_ view: UIView) {
+    
+    func addShadow(to view: UIView, with margin: CGFloat) -> UIView {
         
-        addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .left, .right]
-        
-        for attribute in attributes {
-            NSLayoutConstraint.activate([
-                NSLayoutConstraint(item: view,
-                                   attribute: attribute,
-                                   relatedBy: .equal,
-                                   toItem: self,
-                                   attribute: attribute,
-                                   multiplier: 1.0, constant: 0)
-            ])
-        }
+        let frame = CGRect(x: 0, y: 0,
+                           width: view.bounds.width - (2 * margin),
+                           height: view.bounds.height - (2 * margin))
+        let shadowView = UIView(frame: frame)
+        let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
+        shadowView.layer.masksToBounds = false
+        shadowView.layer.shadowRadius = 8.0
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: CGFloat(0.0), height: CGFloat(0.0))
+        shadowView.layer.shadowOpacity = 0.15
+        shadowView.layer.shadowPath = shadowPath.cgPath
+        insertSubview(shadowView, at: 0)
+        return shadowView
     }
 }

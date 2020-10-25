@@ -10,7 +10,6 @@ import UIKit
 //swiftlint:disable trailing_whitespace
 
 protocol ContainerViewModelProtocol {
-    func addConnection(user: User)
     func addCardView(_ cardView: CardView, at index: Int)
 }
 
@@ -56,22 +55,10 @@ class ContainerViewModel {
     
     private func createUserCardView(with user: User) -> CardView? {
         
-        guard var name = user.name?.first,
-              let imageUrl = user.picture?.large else { return nil }
-        
-        if let lastName = user.name?.last {
-            name += " \(lastName)"
-        }
-        
-        var location: String?
-        if let city = user.location?.city,
-           let state = user.location?.state {
-            location = "\(city), \(state)"
-        }
-        
+        guard let imageUrl = user.picture?.large else { return nil }
         let card = CardView()
         card.user = user
-        card.setInfo(name: name, location: location, age: user.birth?.age, imageUrl: imageUrl)
+        card.setInfo(name: user.fullName, location: user.fullLocation, age: user.age, imageUrl: imageUrl)
         return card
     }
     
@@ -107,16 +94,6 @@ class ContainerViewModel {
     }
 }
 
-// MARK: - SwipeableViewDataSource
-
-extension ContainerViewModel: SwipeableCardViewDataSource {
-    
-    func numberOfCards() -> Int { return 0 }
-    func cards(with users: [User]) { }
-    func card(at index: Int) -> SwipeableCardView {  return cardViews[index] }
-    func emptyCardsView() -> UIView? { return nil }
-}
-
 // MARK: - SwipeableViewDelegate
 
 extension ContainerViewModel: SwipeableViewDelegate {
@@ -124,16 +101,15 @@ extension ContainerViewModel: SwipeableViewDelegate {
     func didSwipeLeft(on view: SwipeableView) {
         
         cardViews.removeFirst()
-        print("card swipe left")
         insertNewCard()
     }
     
     func didSwipeRight(on view: SwipeableView) {
         
         let card = cardViews.removeFirst()
-        containerView?.addConnection(user: card.user)
-        print("card swipe right")
-        delegate?.addConnect(user: card.user)
+        //containerView?.addConnection(user: card.user)
+        //delegate?.addConnect(user: card.user)
+        delegate?.delegate?.addConnection(user: card.user)
         insertNewCard()
     }
 }

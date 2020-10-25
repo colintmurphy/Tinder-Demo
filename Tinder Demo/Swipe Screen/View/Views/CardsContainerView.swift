@@ -13,8 +13,8 @@ class CardsContainerView: UIView {
     
     // MARK: - Properties
     
-    let horizontalInset: CGFloat = 12.0
-    let verticalInset: CGFloat = 12.0
+    private let horizontalInset: CGFloat = 12.0
+    private let verticalInset: CGFloat = 12.0
     var viewModel: ContainerViewModel?
 
     // MARK: - Methods
@@ -37,9 +37,5 @@ extension CardsContainerView: ContainerViewModelProtocol {
         guard let card = viewModel?.addCardView(cardView, at: index) else { return }
         insertSubview(card, at: 0)
         setNeedsLayout()
-    }
-    
-    func addConnection(user: User) {
-        print(user)
     }
 }

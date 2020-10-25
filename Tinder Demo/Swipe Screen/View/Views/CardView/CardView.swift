@@ -20,12 +20,14 @@ class CardView: SwipeableCardView {
     @IBOutlet weak private var locationLabel: UILabel!
     @IBOutlet weak private var ageLabel: UILabel!
     
+    // MARK: - Properties
+    
     private weak var shadowView: UIView?
     private let kInnerMargin: CGFloat = 20.0
     
     var user: User!
     
-    // MARK: - Methods
+    // MARK: - Inits
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,11 +38,6 @@ class CardView: SwipeableCardView {
         super.init(frame: frame)
         commonInit()
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        configureShadow()
-    }
     
     private func commonInit() {
         
@@ -50,39 +47,23 @@ class CardView: SwipeableCardView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentSubView.layer.cornerRadius = 15
     }
+    
+    // MARK: - Methods
 
-    private func configureShadow() {
-        
-        if shadowView == nil {
-            let shadowView = UIView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: contentSubView.bounds.width - (2 * kInnerMargin),
-                                              height: contentSubView.bounds.height - (2 * kInnerMargin)))
-            
-            let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
-            shadowView.layer.masksToBounds = false
-            shadowView.layer.shadowRadius = 8.0
-            shadowView.layer.shadowColor = UIColor.black.cgColor
-            shadowView.layer.shadowOffset = CGSize(width: CGFloat(0.0), height: CGFloat(0.0))
-            shadowView.layer.shadowOpacity = 0.15
-            shadowView.layer.shadowPath = shadowPath.cgPath
-            insertSubview(shadowView, at: 0)
-            self.shadowView = shadowView
-        }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard shadowView == nil else { return }
+        shadowView = addShadow(to: contentSubView, with: kInnerMargin)
     }
     
-    func setInfo(name: String, location: String?, age: Int?, imageUrl: String) {
+    func setInfo(name: String, location: String, age: String, imageUrl: String) {
         
         nameLabel.text = name
-        
-        if let location = location {
+        ageLabel.text = age
+        if location != "" {
             locationLabel.text = location
         } else {
             locationLabel.isHidden = true
-        }
-        
-        if let age = age {
-            ageLabel.text = String(age)
         }
         
         NetworkManager.shared.downloadImage(with: imageUrl) { results in

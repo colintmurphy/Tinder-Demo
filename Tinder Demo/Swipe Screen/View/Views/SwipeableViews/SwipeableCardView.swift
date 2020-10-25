@@ -7,18 +7,7 @@
 
 import UIKit
 
-protocol SwipeableCardViewDelegate: AnyObject {
-    func didSelect(card: SwipeableCardView, atIndex index: Int)
-}
-
-protocol SwipeableCardViewDataSource: AnyObject {
-    func numberOfCards() -> Int
-    func cards(with users: [User])
-    func card(at index: Int) -> SwipeableCardView
-    func emptyCardsView() -> UIView?
-}
-
-class SwipeableCardView: SwipeableView, NibView {
+class SwipeableCardView: SwipeableView { // NibView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

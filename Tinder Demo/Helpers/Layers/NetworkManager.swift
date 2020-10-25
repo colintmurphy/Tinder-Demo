@@ -13,6 +13,7 @@ import UIKit
 class NetworkManager {
     
     static let shared = NetworkManager()
+    private let cache = NSCache<NSString, UIImage>()
     
     private init() { }
     
@@ -37,6 +38,12 @@ class NetworkManager {
     
     func downloadImage(with urlString: String, completion: @escaping (Result<UIImage?, TinderError>) -> Void) {
     
+        let cacheKey = NSString(string: urlString)
+        if let image = cache.object(forKey: cacheKey) {
+            completion(.success(image))
+            return
+        }
+        
         guard let url = URL(string: urlString) else {
             completion(.failure(.badImageUrl))
             return
@@ -44,8 +51,12 @@ class NetworkManager {
     
         do {
             let data = try Data(contentsOf: url)
-            let image = UIImage(data: data)
-            completion(.success(image))
+            if let image = UIImage(data: data) {
+                cache.setObject(image, forKey: cacheKey)
+                completion(.success(image))
+            } else {
+                completion(.failure(.couldNotUnwrapImage))
+            }
         } catch {
             completion(.failure(.couldNotDownloadImage))
         }
