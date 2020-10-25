@@ -12,4 +12,5 @@ enum TinderError: Error {
     case couldNotDownloadImage
     case couldNotUnwrapImage
     case failedFetchingData
+    case noUsersFound
 }

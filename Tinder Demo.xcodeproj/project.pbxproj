@@ -17,9 +17,6 @@
 		21A88E962543BEF2006EEC3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E952543BEF2006EEC3A /* User.swift */; };
 		21A88E9B2543BF10006EEC3A /* TinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E9A2543BF10006EEC3A /* TinderViewModel.swift */; };
 		21A88EAD2543C83C006EEC3A /* CardsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */; };
-		21A88EB22543D16B006EEC3A /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21A88EB12543D16B006EEC3A /* CardView.xib */; };
-		21A88EBA2543D95F006EEC3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EB92543D95F006EEC3A /* CardView.swift */; };
-		21A88EC025447B2B006EEC3A /* Nib+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EBF25447B2B006EEC3A /* Nib+Ext.swift */; };
 		21A88EC525447C50006EEC3A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EC425447C50006EEC3A /* UIView+Ext.swift */; };
 		21A88ECE25447EE1006EEC3A /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88ECD25447EE1006EEC3A /* SwipeableCardView.swift */; };
 		21A88ED325447F2D006EEC3A /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88ED225447F2D006EEC3A /* SwipeableView.swift */; };
@@ -27,6 +24,10 @@
 		21A88EF5254485E5006EEC3A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EF4254485E5006EEC3A /* NetworkManager.swift */; };
 		21A88EFD25448741006EEC3A /* TinderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88EFC25448741006EEC3A /* TinderError.swift */; };
 		21A88F0525449010006EEC3A /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88F0425449010006EEC3A /* ContainerViewModel.swift */; };
+		21B8273B2544B235009E9A53 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B8273A2544B235009E9A53 /* CardView.swift */; };
+		21B827402544B24A009E9A53 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21B8273F2544B24A009E9A53 /* CardView.xib */; };
+		21FE8C0A2544DCB90052EFF7 /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C092544DCB90052EFF7 /* SwipeDirection.swift */; };
+		21FE8C122544E88B0052EFF7 /* Nib+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C112544E88B0052EFF7 /* Nib+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +64,6 @@
 		21A88E952543BEF2006EEC3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21A88E9A2543BF10006EEC3A /* TinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModel.swift; sourceTree = "<group>"; };
 		21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsContainerView.swift; sourceTree = "<group>"; };
-		21A88EB12543D16B006EEC3A /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
-		21A88EB92543D95F006EEC3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		21A88EBF25447B2B006EEC3A /* Nib+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nib+Ext.swift"; sourceTree = "<group>"; };
 		21A88EC425447C50006EEC3A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		21A88ECD25447EE1006EEC3A /* SwipeableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
 		21A88ED225447F2D006EEC3A /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
@@ -73,6 +71,10 @@
 		21A88EF4254485E5006EEC3A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		21A88EFC25448741006EEC3A /* TinderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderError.swift; sourceTree = "<group>"; };
 		21A88F0425449010006EEC3A /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
+		21B8273A2544B235009E9A53 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		21B8273F2544B24A009E9A53 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		21FE8C092544DCB90052EFF7 /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		21FE8C112544E88B0052EFF7 /* Nib+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nib+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				21A88E952543BEF2006EEC3A /* User.swift */,
+				21FE8C092544DCB90052EFF7 /* SwipeDirection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,8 +213,8 @@
 		21A88ECC25447D93006EEC3A /* CardView */ = {
 			isa = PBXGroup;
 			children = (
-				21A88EB92543D95F006EEC3A /* CardView.swift */,
-				21A88EB12543D16B006EEC3A /* CardView.xib */,
+				21B8273A2544B235009E9A53 /* CardView.swift */,
+				21B8273F2544B24A009E9A53 /* CardView.xib */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -228,7 +231,7 @@
 		21A88EEF254485CA006EEC3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				21A88EBF25447B2B006EEC3A /* Nib+Ext.swift */,
+				21FE8C112544E88B0052EFF7 /* Nib+Ext.swift */,
 				21A88EC425447C50006EEC3A /* UIView+Ext.swift */,
 			);
 			path = Extensions;
@@ -374,7 +377,7 @@
 			files = (
 				21A88E642543BD64006EEC3A /* LaunchScreen.storyboard in Resources */,
 				21A88E612543BD64006EEC3A /* Assets.xcassets in Resources */,
-				21A88EB22543D16B006EEC3A /* CardView.xib in Resources */,
+				21B827402544B24A009E9A53 /* CardView.xib in Resources */,
 				21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,17 +423,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B8273B2544B235009E9A53 /* CardView.swift in Sources */,
 				21A88EF5254485E5006EEC3A /* NetworkManager.swift in Sources */,
-				21A88EBA2543D95F006EEC3A /* CardView.swift in Sources */,
 				21A88EE2254480C4006EEC3A /* TinderViewController.swift in Sources */,
+				21FE8C122544E88B0052EFF7 /* Nib+Ext.swift in Sources */,
 				21A88E962543BEF2006EEC3A /* User.swift in Sources */,
 				21A88E9B2543BF10006EEC3A /* TinderViewModel.swift in Sources */,
 				21A88EFD25448741006EEC3A /* TinderError.swift in Sources */,
 				21A88F0525449010006EEC3A /* ContainerViewModel.swift in Sources */,
 				21A88ECE25447EE1006EEC3A /* SwipeableCardView.swift in Sources */,
 				21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */,
+				21FE8C0A2544DCB90052EFF7 /* SwipeDirection.swift in Sources */,
 				21A88EC525447C50006EEC3A /* UIView+Ext.swift in Sources */,
-				21A88EC025447B2B006EEC3A /* Nib+Ext.swift in Sources */,
 				21A88ED325447F2D006EEC3A /* SwipeableView.swift in Sources */,
 				21A88E5A2543BD62006EEC3A /* SceneDelegate.swift in Sources */,
 				21A88EAD2543C83C006EEC3A /* CardsContainerView.swift in Sources */,

@@ -30,6 +30,7 @@ class TinderViewController: UIViewController {
 
     private func setup() {
         viewModel = TinderViewModel(view: self)
+        cardsView.viewModel?.delegate = viewModel
     }
 }
 
@@ -41,5 +42,27 @@ extension TinderViewController: TinderViewModelDelegate {
         cardsView.viewModel?.addCards(with: users)
     }
     
-    func failed(error: TinderError) { }
+    func addConnection(user: User) {
+        print(user)
+    }
+    
+    func failed(error: TinderError) {
+        
+        switch error {
+        case .badImageUrl:
+            break
+            
+        case .couldNotDownloadImage:
+            break
+            
+        case .couldNotUnwrapImage:
+            break
+            
+        case .failedFetchingData:
+            break
+            
+        case .noUsersFound:
+            break
+        }
+    }
 }

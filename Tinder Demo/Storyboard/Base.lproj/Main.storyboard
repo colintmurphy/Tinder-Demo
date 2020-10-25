@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-ut-Vug" customClass="CardsContainerView" customModule="Tinder_Demo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="224" width="414" height="448"/>
+                                <rect key="frame" x="32" y="224" width="350" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="FbI-ut-Vug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="88Q-MI-gzN"/>
+                            <constraint firstItem="FbI-ut-Vug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="88Q-MI-gzN"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="DMO-ua-qjw"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bLI-fj-ZyU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FbI-ut-Vug" secondAttribute="trailing" id="lDJ-d0-saW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FbI-ut-Vug" secondAttribute="trailing" constant="32" id="lDJ-d0-saW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -43,6 +43,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

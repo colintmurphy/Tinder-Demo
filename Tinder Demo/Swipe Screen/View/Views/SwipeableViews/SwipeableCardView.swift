@@ -22,11 +22,9 @@ class SwipeableCardView: SwipeableView, NibView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupXib()
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupXib()
     }
 }

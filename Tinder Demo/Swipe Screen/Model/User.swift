@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RandomUserResponse: Decodable {
+    var results: [User]?
+}
+
 struct User: Decodable {
     var name: Name?
     var location: Location?
@@ -17,6 +21,7 @@ struct User: Decodable {
         case name
         case location
         case birth = "dob"
+        case picture
     }
 }
 

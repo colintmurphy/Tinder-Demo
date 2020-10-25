@@ -10,6 +10,7 @@ import UIKit
 //swiftlint:disable trailing_whitespace
 
 protocol ContainerViewModelProtocol {
+    func addConnection(user: User)
     func addCardView(_ cardView: CardView, at index: Int)
 }
 
@@ -21,33 +22,42 @@ class ContainerViewModel {
     private let verticalInset: CGFloat = 12.0
     private let numberOfVisibleCards: Int = 3
     
-    private var remainingCards: Int = 0
-    private var cardViews: [CardView] = []
+    weak var delegate: TinderViewModel?
+    weak var containerView: CardsContainerView?
     
-    weak var view: CardsContainerView?
-    var dataSource: [CardView] = []
+    private var cardViews: [CardView] = []
+    var users: [User] = []
     
     // MARK: - Inits
     
     required init(_ view: CardsContainerView) {
-        self.view = view
+        containerView = view
     }
     
     // MARK: - Methods
     
     func addCards(with users: [User]) {
         
-        for user in users {
-            if let card = createUserCardView(with: user) {
-                dataSource.append(card)
-            }
+        self.users = users
+        for _ in 0..<3 {
+            insertNewCard()
         }
+    }
+    
+    func insertNewCard() {
+        
+        guard !users.isEmpty else { return }
+        let user = users.removeLast()
+        if let card = createUserCardView(with: user) {
+            containerView?.addCardView(card, at: cardViews.count-1)
+        }
+        updateFrames()
     }
     
     private func createUserCardView(with user: User) -> CardView? {
         
         guard var name = user.name?.first,
-              let imageUrl = user.picture?.medium else { return nil }
+              let imageUrl = user.picture?.large else { return nil }
         
         if let lastName = user.name?.last {
             name += " \(lastName)"
@@ -60,6 +70,7 @@ class ContainerViewModel {
         }
         
         let card = CardView()
+        card.user = user
         card.setInfo(name: name, location: location, age: user.birth?.age, imageUrl: imageUrl)
         return card
     }
@@ -67,14 +78,14 @@ class ContainerViewModel {
     func addCardView(_ cardView: CardView, at index: Int) -> CardView? {
         
         guard let card = setFrame(for: cardView, at: index) else { return nil }
+        card.delegate = self
         cardViews.append(card)
-        remainingCards -= 1
         return card
     }
     
     private func setFrame(for cardView: CardView, at index: Int) -> CardView? {
         
-        guard let bounds = view?.bounds else { return nil }
+        guard let bounds = containerView?.bounds else { return nil }
         var cardViewFrame = bounds
         let horizontalInset = (CGFloat(index) * self.horizontalInset)
         let verticalInset = CGFloat(index) * self.verticalInset
@@ -85,17 +96,15 @@ class ContainerViewModel {
         cardView.frame = cardViewFrame
         return cardView
     }
-}
-
-// MARK: - SwipeableViewDelegate
-
-extension ContainerViewModel: SwipeableViewDelegate {
     
-    func didTap(_ view: SwipeableView) { }
-    
-    func didBeginSwipe(on view: SwipeableView) { }
-
-    func didEndSwipe(on view: SwipeableView) { }
+    func updateFrames() {
+        
+        for (index, card) in cardViews.enumerated() {
+            if let card =  setFrame(for: card, at: index) {
+                cardViews[index] = card
+            }
+        }
+    }
 }
 
 // MARK: - SwipeableViewDataSource
@@ -103,10 +112,28 @@ extension ContainerViewModel: SwipeableViewDelegate {
 extension ContainerViewModel: SwipeableCardViewDataSource {
     
     func numberOfCards() -> Int { return 0 }
-    
     func cards(with users: [User]) { }
-    
-    func card(at index: Int) -> SwipeableCardView {  return dataSource[index] }
-    
+    func card(at index: Int) -> SwipeableCardView {  return cardViews[index] }
     func emptyCardsView() -> UIView? { return nil }
+}
+
+// MARK: - SwipeableViewDelegate
+
+extension ContainerViewModel: SwipeableViewDelegate {
+    
+    func didSwipeLeft(on view: SwipeableView) {
+        
+        cardViews.removeFirst()
+        print("card swipe left")
+        insertNewCard()
+    }
+    
+    func didSwipeRight(on view: SwipeableView) {
+        
+        let card = cardViews.removeFirst()
+        containerView?.addConnection(user: card.user)
+        print("card swipe right")
+        delegate?.addConnect(user: card.user)
+        insertNewCard()
+    }
 }
