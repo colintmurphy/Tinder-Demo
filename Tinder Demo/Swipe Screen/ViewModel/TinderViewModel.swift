@@ -39,21 +39,7 @@ class TinderViewModel {
         loadUsers()
     }
     
-    // MARK: - Model Methods
-    
-    func initContainerViewCards(with users: [User]) {
-        
-        self.users = users
-        for _ in 0..<numberOfVisibleCards {
-            insertNewCard()
-        }
-    }
-    
-    func getConnects() -> [User] {
-        return connectsList
-    }
-    
-    // MARK: - Private Methods
+    // MARK: - Load Users
     
     private func loadUsers() {
         
@@ -69,6 +55,16 @@ class TinderViewModel {
             case .failure(let error):
                 self.viewModelDelegate?.failed(error: error)
             }
+        }
+    }
+    
+    // MARK: - Add Cards
+    
+    private func initContainerViewCards(with users: [User]) {
+        
+        self.users = users
+        for _ in 0..<numberOfVisibleCards {
+            insertNewCard()
         }
     }
     
@@ -92,6 +88,8 @@ class TinderViewModel {
         usersInContainer.append(user)
         return card
     }
+    
+    // MARK: - Set Card Frames
     
     private func setFrame(for cardView: CardView, at index: Int) -> CardView? {
         

@@ -16,11 +16,17 @@ protocol ConnectsDataSource: AnyObject {
 
 class ConnectsViewModel {
     
+    // MARK: - Properties
+    
     weak var dataSource: ConnectsDataSource?
+    
+    // MARK: - Inits
     
     init(dataSource: ConnectsDataSource?) {
         self.dataSource = dataSource
     }
+    
+    // MARK: - Getters
     
     func getConnectsCount() -> Int {
         return dataSource?.getConnectsCount() ?? 0

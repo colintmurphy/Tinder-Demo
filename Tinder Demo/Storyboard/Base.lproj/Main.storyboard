@@ -116,7 +116,6 @@
                                                 <constraint firstItem="mmc-TF-W5Q" firstAttribute="leading" secondItem="EsH-qr-nep" secondAttribute="leadingMargin" constant="8" id="1eO-Oi-wCI"/>
                                                 <constraint firstItem="tsK-DW-w4V" firstAttribute="centerY" secondItem="mmc-TF-W5Q" secondAttribute="centerY" id="6l4-Zy-2Pt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mmc-TF-W5Q" secondAttribute="bottom" constant="8" id="CKr-bi-RWM"/>
-                                                <constraint firstItem="tsK-DW-w4V" firstAttribute="height" relation="lessThanOrEqual" secondItem="mmc-TF-W5Q" secondAttribute="height" multiplier="1:1" id="RSA-hP-zJE"/>
                                                 <constraint firstItem="mmc-TF-W5Q" firstAttribute="top" secondItem="EsH-qr-nep" secondAttribute="topMargin" constant="8" id="dE3-Dl-rwT"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tsK-DW-w4V" secondAttribute="trailing" constant="16" id="onD-G2-fG7"/>
                                                 <constraint firstItem="tsK-DW-w4V" firstAttribute="leading" secondItem="mmc-TF-W5Q" secondAttribute="trailing" constant="16" id="yaS-v9-CRD"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		218CC15B2547279700E3DA27 /* SwipeableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */; };
 		218CC160254729F800E3DA27 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC15F254729F800E3DA27 /* UserTests.swift */; };
 		218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */; };
 		218CC17F25473A3200E3DA27 /* TinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC17E25473A3200E3DA27 /* TinderViewModel.swift */; };
@@ -31,7 +30,6 @@
 		21FE8C1B254527380052EFF7 /* ConnectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */; };
 		21FE8C22254527750052EFF7 /* ConnectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */; };
 		21FE8C2A254528610052EFF7 /* ConnectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */; };
-		21FE8C352546330D0052EFF7 /* TinderScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewTests.swift; sourceTree = "<group>"; };
 		218CC15F254729F800E3DA27 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModelTests.swift; sourceTree = "<group>"; };
 		218CC17E25473A3200E3DA27 /* TinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModel.swift; sourceTree = "<group>"; };
@@ -82,7 +79,6 @@
 		21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010ConnectsViewController.swift"; sourceTree = "<group>"; };
 		21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsViewModel.swift; sourceTree = "<group>"; };
 		21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTableViewCell.swift; sourceTree = "<group>"; };
-		21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderScreenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +106,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		218CC192254753C600E3DA27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21A88EFC25448741006EEC3A /* TinderError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		218CC19F2547557F00E3DA27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				218CC15F254729F800E3DA27 /* UserTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		218CC1A02547558800E3DA27 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				21A88E6E2543BD64006EEC3A /* NetworkManagerTests.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		218CC1A12547559700E3DA27 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		21A88E4B2543BD62006EEC3A = {
 			isa = PBXGroup;
 			children = (
@@ -145,11 +173,9 @@
 		21A88E6D2543BD64006EEC3A /* Tinder DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				21A88E6E2543BD64006EEC3A /* NetworkManagerTests.swift */,
-				218CC15F254729F800E3DA27 /* UserTests.swift */,
-				218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */,
-				21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */,
-				218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */,
+				218CC19F2547557F00E3DA27 /* Models */,
+				218CC1A02547558800E3DA27 /* Layers */,
+				218CC1A12547559700E3DA27 /* ViewModels */,
 				21A88E702543BD64006EEC3A /* Info.plist */,
 			);
 			path = "Tinder DemoTests";
@@ -187,18 +213,18 @@
 		21A88E922543BE59006EEC3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21A88F1025449757006EEC3A /* ViewControllers */,
+				21A88F1025449757006EEC3A /* ViewController */,
 				21A88F112544975E006EEC3A /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		21A88E932543BE5D006EEC3A /* ViewModels */ = {
+		21A88E932543BE5D006EEC3A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				218CC17E25473A3200E3DA27 /* TinderViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		21A88E942543BE65006EEC3A /* Swipe Screen */ = {
@@ -206,7 +232,7 @@
 			children = (
 				21A88E912543BE4E006EEC3A /* Model */,
 				21A88E922543BE59006EEC3A /* View */,
-				21A88E932543BE5D006EEC3A /* ViewModels */,
+				21A88E932543BE5D006EEC3A /* ViewModel */,
 			);
 			path = "Swipe Screen";
 			sourceTree = "<group>";
@@ -214,7 +240,7 @@
 		21A88EBE25447B18006EEC3A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				21A88EFC25448741006EEC3A /* TinderError.swift */,
+				218CC192254753C600E3DA27 /* Models */,
 				21A88EF0254485CE006EEC3A /* Layers */,
 				21A88EEF254485CA006EEC3A /* Extensions */,
 			);
@@ -230,13 +256,13 @@
 			path = CardView;
 			sourceTree = "<group>";
 		};
-		21A88EE0254480A3006EEC3A /* SwipeableViews */ = {
+		21A88EE0254480A3006EEC3A /* SwipeableView */ = {
 			isa = PBXGroup;
 			children = (
 				21A88ED225447F2D006EEC3A /* SwipeableView.swift */,
 				21A88ECD25447EE1006EEC3A /* SwipeableCardView.swift */,
 			);
-			path = SwipeableViews;
+			path = SwipeableView;
 			sourceTree = "<group>";
 		};
 		21A88EEF254485CA006EEC3A /* Extensions */ = {
@@ -263,12 +289,12 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		21A88F1025449757006EEC3A /* ViewControllers */ = {
+		21A88F1025449757006EEC3A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				21A88EE1254480C4006EEC3A /* TinderViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		21A88F112544975E006EEC3A /* Views */ = {
@@ -276,7 +302,7 @@
 			children = (
 				21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */,
 				21A88ECC25447D93006EEC3A /* CardView */,
-				21A88EE0254480A3006EEC3A /* SwipeableViews */,
+				21A88EE0254480A3006EEC3A /* SwipeableView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,8 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */,
-				21FE8C352546330D0052EFF7 /* TinderScreenTests.swift in Sources */,
-				218CC15B2547279700E3DA27 /* SwipeableViewTests.swift in Sources */,
 				218CC160254729F800E3DA27 /* UserTests.swift in Sources */,
 				21A88E6F2543BD64006EEC3A /* NetworkManagerTests.swift in Sources */,
 			);

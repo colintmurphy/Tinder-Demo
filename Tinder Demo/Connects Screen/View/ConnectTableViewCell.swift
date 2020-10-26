@@ -11,10 +11,14 @@ import UIKit
 
 class ConnectTableViewCell: UITableViewCell {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet private weak var connectImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
+    
+    // MARK: - Setup
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +28,14 @@ class ConnectTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    private func setupCustomImage() {
+        connectImageView.layer.cornerRadius = 15
+        connectImageView.layer.borderWidth = 1.0
+        connectImageView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    // MARK: - Set Info
     
     func setInfo(user: User) {
         
@@ -42,11 +54,5 @@ class ConnectTableViewCell: UITableViewCell {
                 print(error.localizedDescription, " in ConnectTableViewCell")
             }
         }
-    }
-    
-    private func setupCustomImage() {
-        connectImageView.layer.cornerRadius = 15
-        connectImageView.layer.borderWidth = 1.0
-        connectImageView.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

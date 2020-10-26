@@ -22,7 +22,7 @@ extension UIView {
         shadowView.layer.shadowRadius = 8.0
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOffset = CGSize(width: CGFloat(0.0), height: CGFloat(0.0))
-        shadowView.layer.shadowOpacity = 0.15
+        shadowView.layer.shadowOpacity = 0.25
         shadowView.layer.shadowPath = shadowPath.cgPath
         insertSubview(shadowView, at: 0)
         return shadowView
