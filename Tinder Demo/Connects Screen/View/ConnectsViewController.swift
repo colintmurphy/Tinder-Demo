@@ -18,34 +18,29 @@ class ConnectsViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.tableFooterView = UIView()
         }
     }
     
     // MARK: - Properties
     
-    weak var delegate: ConnectsTableViewDelegate?
-    var viewModel: ConnectsViewModel?
+    var connectsViewModel: ConnectsViewModel?
+    var tinderViewModel: ConnectsDataSource?
     
     // MARK: - View Life Cycles
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        viewModel = ConnectsViewModel(delegate: self)
+        if let navController = tabBarController?.viewControllers?.first as? UINavigationController,
+           let tinderView = navController.viewControllers.first as? TinderViewController {
+            connectsViewModel = ConnectsViewModel(dataSource: tinderView.viewModel)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
-        print(viewModel?.getConnectsCount())
-    }
-}
-
-extension ConnectsViewController: ConnectsTableViewDelegate {
-    
-    func insertUser(_ user: User, at index: [IndexPath]) {
-        //tableView.beginUpdates()
-        //tableView.insertRows(at: index, with: .automatic)
-        //tableView.endUpdates()
     }
 }
 
@@ -63,14 +58,13 @@ extension ConnectsViewController: UITableViewDelegate {
 extension ConnectsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.getConnectsCount() ?? 0
+        return connectsViewModel?.getConnectsCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ConnectTableViewCell.description(),
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ConnectTableViewCell",
                                                        for: indexPath) as? ConnectTableViewCell else { fatalError("couldn't load ") }
-        
-        if let user = viewModel?.getUser(at: indexPath.row) {
+        if let user = connectsViewModel?.getUser(at: indexPath.row) {
             cell.setInfo(user: user)
         }
         return cell

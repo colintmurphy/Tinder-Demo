@@ -11,7 +11,6 @@ import UIKit
 
 protocol TinderViewModelDelegate: AnyObject {
     func failed(error: TinderError)
-    func addConnection(user: User)
     func addCardToContainer(card: CardView, at index: Int)
 }
 
@@ -27,12 +26,14 @@ class TinderViewModel {
     private var users: [User] = []
     private var cardViews: [CardView] = []
     private var usersInContainer: [User] = []
+    private var connectsList: [User] = []
     
     weak var viewModelDelegate: TinderViewModelDelegate?
     
     // MARK: - Inits
 
     required init(viewModelDelegate: TinderViewModelDelegate, containerViewBounds: CGRect) {
+        
         self.viewModelDelegate = viewModelDelegate
         self.containerViewBounds = containerViewBounds
         loadUsers()
@@ -46,6 +47,10 @@ class TinderViewModel {
         for _ in 0..<numberOfVisibleCards {
             insertNewCard()
         }
+    }
+    
+    func getConnects() -> [User] {
+        return connectsList
     }
     
     // MARK: - Private Methods
@@ -126,7 +131,21 @@ extension TinderViewModel: SwipeableViewDelegate {
         
         cardViews.removeFirst()
         let user = usersInContainer.removeFirst()
-        viewModelDelegate?.addConnection(user: user)
+        connectsList.append(user)
         insertNewCard()
+    }
+}
+
+// MARK: - ConnectsDataSource
+
+extension TinderViewModel: ConnectsDataSource {
+    
+    func getConnectsCount() -> Int {
+        return connectsList.count
+    }
+    
+    func getConnect(at index: Int) -> User? {
+        guard index < connectsList.count else { return nil }
+        return connectsList[index]
     }
 }

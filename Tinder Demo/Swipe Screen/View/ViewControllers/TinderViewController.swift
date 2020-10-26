@@ -17,7 +17,7 @@ class TinderViewController: UIViewController {
     
     // MARK: - Properties
 
-    private var viewModel: TinderViewModel?
+    var viewModel: TinderViewModel?
     
     // MARK: - View Life Cycles
 
@@ -33,10 +33,6 @@ extension TinderViewController: TinderViewModelDelegate {
     
     func addCardToContainer(card: CardView, at index: Int) {
         cardsView.insertSubview(card, at: index)
-    }
-    
-    func addConnection(user: User) {
-        print("user: ", user)
     }
     
     func failed(error: TinderError) {

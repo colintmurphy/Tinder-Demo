@@ -9,42 +9,24 @@ import Foundation
 
 //swiftlint:disable trailing_whitespace
 
-protocol ConnectsViewModelDelegate: AnyObject {
-    func addConnect(user: User)
-}
-
-protocol ConnectsTableViewDelegate: AnyObject {
-    var delegate: ConnectsTableViewDelegate? { get set }
-    func insertUser(_ user: User, at index: [IndexPath])
+protocol ConnectsDataSource: AnyObject {
+    func getConnectsCount() -> Int
+    func getConnect(at index: Int) -> User?
 }
 
 class ConnectsViewModel {
     
-    weak var delegate: ConnectsTableViewDelegate?
-
-    private var dataSource: [User] = []
+    weak var dataSource: ConnectsDataSource?
     
-    init(delegate: ConnectsTableViewDelegate) {
-        self.delegate = delegate
+    init(dataSource: ConnectsDataSource?) {
+        self.dataSource = dataSource
     }
     
     func getConnectsCount() -> Int {
-        return dataSource.count
+        return dataSource?.getConnectsCount() ?? 0
     }
     
     func getUser(at index: Int) -> User? {
-        guard index > dataSource.count-1 else { return nil }
-        return dataSource[index]
-    }
-}
-
-// MARK: - ConnectsViewModelDelegate
-
-extension ConnectsViewModel: ConnectsViewModelDelegate {
-    
-    func addConnect(user: User) {
-        dataSource.append(user)
-        let index = [IndexPath(row: dataSource.count-1, section: 0)]
-        delegate?.insertUser(user, at: index)
+        return dataSource?.getConnect(at: index)
     }
 }
