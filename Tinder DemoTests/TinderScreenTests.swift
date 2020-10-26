@@ -8,6 +8,8 @@
 import XCTest
 @testable import Tinder_Demo
 
+//swiftlint:disable trailing_whitespace
+
 class TinderScreenTests: XCTestCase {
 
     override func setUpWithError() throws { }

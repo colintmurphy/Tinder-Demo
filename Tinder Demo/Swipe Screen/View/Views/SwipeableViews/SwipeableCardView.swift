@@ -7,13 +7,17 @@
 
 import UIKit
 
-class SwipeableCardView: SwipeableView { // NibView {
+//swiftlint:disable trailing_whitespace
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+class SwipeableCardView: SwipeableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    deinit { }
 }

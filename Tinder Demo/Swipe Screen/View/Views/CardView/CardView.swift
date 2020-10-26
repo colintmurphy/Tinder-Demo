@@ -23,9 +23,7 @@ class CardView: SwipeableCardView {
     // MARK: - Properties
     
     private weak var shadowView: UIView?
-    private let kInnerMargin: CGFloat = 20.0
-    
-    var user: User!
+    private let innerMargin: CGFloat = 20.0
     
     // MARK: - Inits
     
@@ -39,8 +37,11 @@ class CardView: SwipeableCardView {
         commonInit()
     }
     
+    deinit { }
+    
     private func commonInit() {
         
+        //accessibilityIdentifier = "SwipeableView"
         Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
@@ -53,7 +54,7 @@ class CardView: SwipeableCardView {
     override func layoutSubviews() {
         super.layoutSubviews()
         guard shadowView == nil else { return }
-        shadowView = addShadow(to: contentSubView, with: kInnerMargin)
+        shadowView = addShadow(to: contentSubView, with: innerMargin)
     }
     
     func setInfo(name: String, location: String, age: String, imageUrl: String) {

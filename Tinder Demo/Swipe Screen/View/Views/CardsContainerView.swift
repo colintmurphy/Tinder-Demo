@@ -13,8 +13,6 @@ class CardsContainerView: UIView {
     
     // MARK: - Properties
     
-    private let horizontalInset: CGFloat = 12.0
-    private let verticalInset: CGFloat = 12.0
     var viewModel: ContainerViewModel?
 
     // MARK: - Methods

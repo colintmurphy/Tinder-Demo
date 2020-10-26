@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218CC15B2547279700E3DA27 /* SwipeableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */; };
+		218CC160254729F800E3DA27 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC15F254729F800E3DA27 /* UserTests.swift */; };
+		218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */; };
 		21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E572543BD62006EEC3A /* AppDelegate.swift */; };
 		21A88E5A2543BD62006EEC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E592543BD62006EEC3A /* SceneDelegate.swift */; };
 		21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A88E5D2543BD62006EEC3A /* Main.storyboard */; };
@@ -30,7 +33,6 @@
 		21FE8C22254527750052EFF7 /* ConnectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */; };
 		21FE8C2A254528610052EFF7 /* ConnectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */; };
 		21FE8C352546330D0052EFF7 /* TinderScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */; };
-		21FE8C3D254635D70052EFF7 /* ConnectsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C3C254635D70052EFF7 /* ConnectsScreenTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewTests.swift; sourceTree = "<group>"; };
+		218CC15F254729F800E3DA27 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModelTests.swift; sourceTree = "<group>"; };
 		21A88E542543BD62006EEC3A /* Tinder Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A88E572543BD62006EEC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21A88E592543BD62006EEC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +85,6 @@
 		21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsViewModel.swift; sourceTree = "<group>"; };
 		21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTableViewCell.swift; sourceTree = "<group>"; };
 		21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderScreenTests.swift; sourceTree = "<group>"; };
-		21FE8C3C254635D70052EFF7 /* ConnectsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsScreenTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				21A88E6E2543BD64006EEC3A /* NetworkManagerTests.swift */,
+				218CC15F254729F800E3DA27 /* UserTests.swift */,
+				218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */,
 				21FE8C342546330D0052EFF7 /* TinderScreenTests.swift */,
-				21FE8C3C254635D70052EFF7 /* ConnectsScreenTests.swift */,
+				218CC15A2547279700E3DA27 /* SwipeableViewTests.swift */,
 				21A88E702543BD64006EEC3A /* Info.plist */,
 			);
 			path = "Tinder DemoTests";
@@ -230,8 +236,8 @@
 		21A88EE0254480A3006EEC3A /* SwipeableViews */ = {
 			isa = PBXGroup;
 			children = (
-				21A88ECD25447EE1006EEC3A /* SwipeableCardView.swift */,
 				21A88ED225447F2D006EEC3A /* SwipeableView.swift */,
+				21A88ECD25447EE1006EEC3A /* SwipeableCardView.swift */,
 			);
 			path = SwipeableViews;
 			sourceTree = "<group>";
@@ -272,8 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */,
-				21A88EE0254480A3006EEC3A /* SwipeableViews */,
 				21A88ECC25447D93006EEC3A /* CardView */,
+				21A88EE0254480A3006EEC3A /* SwipeableViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,8 +485,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */,
 				21FE8C352546330D0052EFF7 /* TinderScreenTests.swift in Sources */,
-				21FE8C3D254635D70052EFF7 /* ConnectsScreenTests.swift in Sources */,
+				218CC15B2547279700E3DA27 /* SwipeableViewTests.swift in Sources */,
+				218CC160254729F800E3DA27 /* UserTests.swift in Sources */,
 				21A88E6F2543BD64006EEC3A /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

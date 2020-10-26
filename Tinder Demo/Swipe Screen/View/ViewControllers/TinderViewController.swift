@@ -39,11 +39,25 @@ class TinderViewController: UIViewController {
 extension TinderViewController: TinderViewModelDelegate {
     
     func addUsersToCards(users: [User]) {
-        cardsView.viewModel?.addCards(with: users)
+        cardsView.viewModel?.initContainerViewCards(with: users)
     }
     
     func addConnection(user: User) {
-        print("user: ", user)
+        
+        if let connectsVC = UIStoryboard
+            .init(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "ConnectsViewController") as? ConnectsViewController {
+            
+            if let model = connectsVC.viewModel {
+                model.addConnect(user: user)
+            } else {
+                connectsVC.viewDidLoad()
+                let model = ConnectsViewModel(delegate: connectsVC)
+                model.addConnect(user: user)
+            }
+            //connectsVC.viewModel?.addConnect(user: user)
+        }
+        //print("user: ", user)
     }
     
     func failed(error: TinderError) {

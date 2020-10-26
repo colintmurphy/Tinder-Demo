@@ -17,22 +17,22 @@ protocol SwipeableViewDelegate: AnyObject {
 
 class SwipeableView: UIView {
     
+    // MARK: - Properties
+    
     private var initialCenter = CGPoint()
-
+    private var panGestureRecognizer: UIPanGestureRecognizer?
+    
     weak var delegate: SwipeableViewDelegate?
     
-    // MARK: Gesture Recognizer
-
-    private var panGestureRecognizer: UIPanGestureRecognizer?
-    private var panGestureTranslation: CGPoint = .zero
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupGestureRecognizers()
-    }
+    // MARK: - Inits
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupGestureRecognizers()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         setupGestureRecognizers()
     }
     
@@ -41,6 +41,8 @@ class SwipeableView: UIView {
             removeGestureRecognizer(panGestureRecognizer)
         }
     }
+    
+    // MARK: - Methods
     
     private func setupGestureRecognizers() {
         

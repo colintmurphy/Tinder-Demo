@@ -24,7 +24,7 @@ class NetworkManagerTests: XCTestCase {
                 XCTAssertNotNil(response)
                 expectation.fulfill()
             case .failure(let error):
-                XCTAssertNotNil(error)
+                XCTAssertNil(error)
                 expectation.fulfill()
             }
         }
@@ -44,12 +44,25 @@ class NetworkManagerTests: XCTestCase {
                 XCTAssertNotNil(image)
                 expectation.fulfill()
             case .failure(let error):
+                XCTAssertNil(error)
+                expectation.fulfill()
+            }
+        }
+        wait(for: [expectation], timeout: 3.0)
+    }
+    
+    func testDownloadImageFail() {
+        let expectation = XCTestExpectation(description: "fail download user image")
+        NetworkManager.shared.downloadImage(with: "https://randomuser.me/api/portraits/men/27.jp") { results in
+            switch results {
+            case .success(let image):
+                XCTAssertNil(image)
+                expectation.fulfill()
+            case .failure(let error):
                 XCTAssertNotNil(error)
                 expectation.fulfill()
             }
         }
         wait(for: [expectation], timeout: 3.0)
     }
-
-    func testUserSwipeLeft() { }
 }

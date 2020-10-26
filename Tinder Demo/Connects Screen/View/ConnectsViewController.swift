@@ -32,14 +32,20 @@ class ConnectsViewController: UIViewController {
         super.viewDidLoad()
         viewModel = ConnectsViewModel(delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        print(viewModel?.getConnectsCount())
+    }
 }
 
 extension ConnectsViewController: ConnectsTableViewDelegate {
     
     func insertUser(_ user: User, at index: [IndexPath]) {
-        tableView.beginUpdates()
-        tableView.insertRows(at: index, with: .automatic)
-        tableView.endUpdates()
+        //tableView.beginUpdates()
+        //tableView.insertRows(at: index, with: .automatic)
+        //tableView.endUpdates()
     }
 }
 

@@ -22,8 +22,8 @@ struct User: Decodable {
     
     var fullName: String {
         
-        guard let firstName = name?.first else { return "" }
-        if let lastName = name?.last {
+        guard let firstName = name?.first, !firstName.isEmpty else { return "" }
+        if let lastName = name?.last, !lastName.isEmpty {
             return firstName + " " + lastName
         } else {
             return firstName
@@ -33,9 +33,9 @@ struct User: Decodable {
     var fullLocation: String {
         
         var locationDetails = ""
-        if let city = location?.city {
+        if let city = location?.city, !city.isEmpty {
             locationDetails = city
-            if let state = location?.state {
+            if let state = location?.state, !state.isEmpty {
                 locationDetails += ", " + state
             }
         } else if let state = location?.state {

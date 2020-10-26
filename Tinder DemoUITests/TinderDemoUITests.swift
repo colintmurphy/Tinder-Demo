@@ -23,18 +23,19 @@ class TinderDemoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSwipeRight() {
+        //let app = XCUIApplication()
+        //app.launch()
+        //let swipeableView = app.windows.element(matching: .any, identifier: "SwipeableView")
+        //swipeableView.swipeRight()
     }
 
-    func testSwipeRight() { }
-
-    func testSwipeLeft() { }
+    func testSwipeLeft() {
+        //let app = XCUIApplication()
+        //app.launch()
+        //let swipeableView = app.windows.element(matching: .any, identifier: "SwipeableView")
+        //swipeableView.swipeLeft()
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
@@ -45,3 +46,4 @@ class TinderDemoUITests: XCTestCase {
         }
     }
 }
+

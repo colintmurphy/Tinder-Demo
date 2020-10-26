@@ -24,8 +24,9 @@ class ContainerViewModel {
     weak var delegate: TinderViewModel?
     weak var containerView: CardsContainerView?
     
+    private var users: [User] = []
+    private var usersInContainer: [User] = []
     private var cardViews: [CardView] = []
-    var users: [User] = []
     
     // MARK: - Inits
     
@@ -33,21 +34,32 @@ class ContainerViewModel {
         containerView = view
     }
     
-    // MARK: - Methods
+    // MARK: - Model Methods
     
-    func addCards(with users: [User]) {
+    func initContainerViewCards(with users: [User]) {
         
         self.users = users
-        for _ in 0..<3 {
+        for _ in 0..<numberOfVisibleCards {
             insertNewCard()
         }
     }
     
-    func insertNewCard() {
+    func addCardView(_ cardView: CardView, at index: Int) -> CardView? {
+        
+        guard let card = setFrame(for: cardView, at: index) else { return nil }
+        card.delegate = self
+        cardViews.append(card)
+        return card
+    }
+    
+    // MARK: - Private Methods
+    
+    private func insertNewCard() {
         
         guard !users.isEmpty else { return }
         let user = users.removeLast()
         if let card = createUserCardView(with: user) {
+            usersInContainer.append(user)
             containerView?.addCardView(card, at: cardViews.count-1)
         }
         updateFrames()
@@ -57,16 +69,7 @@ class ContainerViewModel {
         
         guard let imageUrl = user.picture?.large else { return nil }
         let card = CardView()
-        card.user = user
         card.setInfo(name: user.fullName, location: user.fullLocation, age: user.age, imageUrl: imageUrl)
-        return card
-    }
-    
-    func addCardView(_ cardView: CardView, at index: Int) -> CardView? {
-        
-        guard let card = setFrame(for: cardView, at: index) else { return nil }
-        card.delegate = self
-        cardViews.append(card)
         return card
     }
     
@@ -84,7 +87,7 @@ class ContainerViewModel {
         return cardView
     }
     
-    func updateFrames() {
+    private func updateFrames() {
         
         for (index, card) in cardViews.enumerated() {
             if let card =  setFrame(for: card, at: index) {
@@ -101,15 +104,17 @@ extension ContainerViewModel: SwipeableViewDelegate {
     func didSwipeLeft(on view: SwipeableView) {
         
         cardViews.removeFirst()
+        usersInContainer.removeFirst()
         insertNewCard()
     }
     
     func didSwipeRight(on view: SwipeableView) {
         
-        let card = cardViews.removeFirst()
+        cardViews.removeFirst()
+        let user = usersInContainer.removeFirst()
+        delegate?.delegate?.addConnection(user: user)
         //containerView?.addConnection(user: card.user)
         //delegate?.addConnect(user: card.user)
-        delegate?.delegate?.addConnection(user: card.user)
         insertNewCard()
     }
 }

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tinder View Controller-->
+        <!--Potential Connects-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TinderViewController" customModule="Tinder_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-ut-Vug" customClass="CardsContainerView" customModule="Tinder_Demo" customModuleProvider="target">
-                                <rect key="frame" x="32" y="204.5" width="350" height="448"/>
+                                <rect key="frame" x="32" y="206.5" width="350" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -27,23 +27,23 @@
                         <constraints>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="88Q-MI-gzN"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="DMO-ua-qjw"/>
-                            <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bLI-fj-ZyU"/>
+                            <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="bLI-fj-ZyU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FbI-ut-Vug" secondAttribute="trailing" constant="32" id="lDJ-d0-saW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" id="exF-Xv-faz"/>
+                    <navigationItem key="navigationItem" title="Potential Connects" id="Wo0-rS-tTO"/>
                     <connections>
                         <outlet property="cardsView" destination="FbI-ut-Vug" id="wxg-b3-Rcj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="94.419642857142847"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="94.419642857142847"/>
         </scene>
         <!--Connects-->
         <scene sceneID="eB2-Ig-V66">
             <objects>
-                <viewController id="Lva-7F-1HK" customClass="ConnectsViewController" customModule="Tinder_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConnectsViewController" id="Lva-7F-1HK" customClass="ConnectsViewController" customModule="Tinder_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iyw-Wm-5bh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4h7-Wh-tTN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LpG-W7-drM">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemPinkColor"/>
@@ -151,7 +152,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="bXB-EB-nxL"/>
+                        <segue destination="GWd-U6-y3F" kind="relationship" relationship="viewControllers" id="bXB-EB-nxL"/>
                         <segue destination="3ac-zO-WKc" kind="relationship" relationship="viewControllers" id="PZZ-zG-MFA"/>
                     </connections>
                 </tabBarController>
@@ -177,6 +178,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iq-l3-QD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="823.66071428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="27c-vN-WR2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GWd-U6-y3F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" id="exF-Xv-faz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bj0-pU-bMS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PlR-gi-wQK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tew-bA-SLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="94.419642857142847"/>
         </scene>
     </scenes>
     <resources>
