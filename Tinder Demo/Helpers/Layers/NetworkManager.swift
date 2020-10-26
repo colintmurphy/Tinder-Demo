@@ -19,7 +19,7 @@ class NetworkManager {
     
     func fetchUsers<T: Decodable>(_ t: T.Type, completion: @escaping (Result<T, TinderError>) -> Void) {
         
-        guard let url = URL(string: "https://randomuser.me/api/?results=10") else { return }
+        guard let url = URL(string: "https://randomuser.me/api/?results=50") else { return }
         URLSession.shared.dataTask(with: url) { data, response, _ in
             guard let data = data,
                   let response = response as? HTTPURLResponse,

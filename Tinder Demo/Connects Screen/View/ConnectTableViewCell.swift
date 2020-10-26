@@ -18,7 +18,7 @@ class ConnectTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        connectImageView.layer.cornerRadius = 15
+        setupCustomImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,5 +42,11 @@ class ConnectTableViewCell: UITableViewCell {
                 print(error.localizedDescription, " in ConnectTableViewCell")
             }
         }
+    }
+    
+    private func setupCustomImage() {
+        connectImageView.layer.cornerRadius = 15
+        connectImageView.layer.borderWidth = 1.0
+        connectImageView.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

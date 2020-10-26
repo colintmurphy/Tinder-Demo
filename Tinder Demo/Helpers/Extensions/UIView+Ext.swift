@@ -11,11 +11,11 @@ import UIKit
 
 extension UIView {
     
-    func addShadow(to view: UIView, with margin: CGFloat) -> UIView {
+    func addShadow(to view: UIView) -> UIView {
         
         let frame = CGRect(x: 0, y: 0,
-                           width: view.bounds.width - (2 * margin),
-                           height: view.bounds.height - (2 * margin))
+                           width: view.bounds.width,
+                           height: view.bounds.height)
         let shadowView = UIView(frame: frame)
         let shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 14.0)
         shadowView.layer.masksToBounds = false

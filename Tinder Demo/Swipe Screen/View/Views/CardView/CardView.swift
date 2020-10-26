@@ -23,7 +23,6 @@ class CardView: SwipeableCardView {
     // MARK: - Properties
     
     private weak var shadowView: UIView?
-    private let innerMargin: CGFloat = 20.0
     
     // MARK: - Inits
     
@@ -54,7 +53,7 @@ class CardView: SwipeableCardView {
     override func layoutSubviews() {
         super.layoutSubviews()
         guard shadowView == nil else { return }
-        shadowView = addShadow(to: contentSubView, with: innerMargin)
+        shadowView = addShadow(to: contentView)
     }
     
     func setInfo(name: String, location: String, age: String, imageUrl: String) {
