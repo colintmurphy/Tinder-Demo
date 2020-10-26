@@ -19,8 +19,8 @@ class SwipeableView: UIView {
     
     // MARK: - Properties
     
-    private var initialCenter = CGPoint()
     private var panGestureRecognizer: UIPanGestureRecognizer?
+    private var initialCenter = CGPoint()
     
     weak var delegate: SwipeableViewDelegate?
     
@@ -61,7 +61,8 @@ class SwipeableView: UIView {
             initialCenter = card.center
             
         case .changed:
-            let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+            let newCenter = CGPoint(x: initialCenter.x + translation.x,
+                                    y: initialCenter.y + translation.y)
             card.center = newCenter
             
         case .ended:

@@ -23,14 +23,7 @@ class TinderViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-    
-    // MARK: - Methods
-
-    private func setup() {
-        viewModel = TinderViewModel(delegate: self)
-        cardsView.viewModel?.delegate = viewModel
+        viewModel = TinderViewModel(viewModelDelegate: self, containerViewBounds: cardsView.bounds)
     }
 }
 
@@ -38,26 +31,12 @@ class TinderViewController: UIViewController {
 
 extension TinderViewController: TinderViewModelDelegate {
     
-    func addUsersToCards(users: [User]) {
-        cardsView.viewModel?.initContainerViewCards(with: users)
+    func addCardToContainer(card: CardView, at index: Int) {
+        cardsView.insertSubview(card, at: index)
     }
     
     func addConnection(user: User) {
-        
-        if let connectsVC = UIStoryboard
-            .init(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "ConnectsViewController") as? ConnectsViewController {
-            
-            if let model = connectsVC.viewModel {
-                model.addConnect(user: user)
-            } else {
-                connectsVC.viewDidLoad()
-                let model = ConnectsViewModel(delegate: connectsVC)
-                model.addConnect(user: user)
-            }
-            //connectsVC.viewModel?.addConnect(user: user)
-        }
-        //print("user: ", user)
+        print("user: ", user)
     }
     
     func failed(error: TinderError) {

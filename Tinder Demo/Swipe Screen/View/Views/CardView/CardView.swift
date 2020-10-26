@@ -44,7 +44,7 @@ class CardView: SwipeableCardView {
         //accessibilityIdentifier = "SwipeableView"
         Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = self.bounds
+        contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentSubView.layer.cornerRadius = 15
     }
