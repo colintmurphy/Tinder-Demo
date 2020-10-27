@@ -11,7 +11,7 @@ import UIKit
 
 protocol TinderViewModelDelegate: AnyObject {
     func failed(error: TinderError)
-    func addCardToContainer(card: CardView, at index: Int)
+    func addCardToContainer(card: NewCardView, at index: Int)
 }
 
 class TinderViewModel {
@@ -23,10 +23,10 @@ class TinderViewModel {
     private let numberOfVisibleCards: Int = 3
     private let containerViewBounds: CGRect
     
-    private var users: [User] = []
-    private var cardViews: [CardView] = []
-    private var usersInContainer: [User] = []
-    private var connectsList: [User] = []
+    var users: [User] = []
+    var cardViews: [NewCardView] = []
+    var usersInContainer: [User] = []
+    var connectsList: [User] = []
     
     weak var viewModelDelegate: TinderViewModelDelegate?
     
@@ -78,11 +78,12 @@ class TinderViewModel {
         updateFrames()
     }
     
-    private func createUserCardView(with user: User) -> CardView? {
+    private func createUserCardView(with user: User) -> NewCardView? {
         
         guard let imageUrl = user.picture?.large else { return nil }
-        let card = CardView()
-        card.setInfo(name: user.fullName, location: user.fullLocation, age: user.age, imageUrl: imageUrl)
+        let card = NewCardView()
+        card.setInfo(user: user)
+        //card.setInfo(name: user.fullName, location: user.fullLocation, age: user.age, imageUrl: imageUrl)
         card.delegate = self
         cardViews.append(card)
         usersInContainer.append(user)
@@ -91,7 +92,7 @@ class TinderViewModel {
     
     // MARK: - Set Card Frames
     
-    private func setFrame(for cardView: CardView, at index: Int) -> CardView? {
+    private func setFrame(for cardView: NewCardView, at index: Int) -> NewCardView? {
         
         var cardViewFrame = containerViewBounds
         let verticalInset = CGFloat(index) * self.verticalInset

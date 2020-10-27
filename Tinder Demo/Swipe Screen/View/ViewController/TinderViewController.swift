@@ -31,7 +31,17 @@ class TinderViewController: UIViewController {
 
 extension TinderViewController: TinderViewModelDelegate {
     
-    func addCardToContainer(card: CardView, at index: Int) {
+    func addCardToContainer(card: NewCardView, at index: Int) {
+        
+        var cardViewFrame = cardsView.bounds
+        let verticalInset = CGFloat(index) * CGFloat(14)
+        let horizontalInset = (CGFloat(index) * CGFloat(14))
+        
+        cardViewFrame.origin.y += verticalInset
+        cardViewFrame.origin.x += horizontalInset //(horizontalInset - CGFloat(14))
+        cardViewFrame.size.width -= 2 * horizontalInset
+        card.frame = cardViewFrame
+        
         cardsView.insertSubview(card, at: index)
     }
     

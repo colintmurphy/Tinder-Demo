@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217EFEB22548844100BC5697 /* PremiumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217EFEB12548844100BC5697 /* PremiumView.xib */; };
+		217EFEB72548845200BC5697 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217EFEB62548845200BC5697 /* PremiumView.swift */; };
 		218CC160254729F800E3DA27 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC15F254729F800E3DA27 /* UserTests.swift */; };
 		218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */; };
 		218CC17F25473A3200E3DA27 /* TinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC17E25473A3200E3DA27 /* TinderViewModel.swift */; };
+		218CC1A625475A6A00E3DA27 /* ConnectsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1A525475A6A00E3DA27 /* ConnectsViewModelTests.swift */; };
+		218CC1AC2547719000E3DA27 /* NewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1AB2547719000E3DA27 /* NewCardView.xib */; };
+		218CC1B1254772BE00E3DA27 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1B0254772BE00E3DA27 /* UserView.xib */; };
+		218CC1B62547731000E3DA27 /* BirthdayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1B52547730F00E3DA27 /* BirthdayView.xib */; };
+		218CC1BC2547733600E3DA27 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1BB2547733600E3DA27 /* LocationView.xib */; };
+		218CC1C12547734500E3DA27 /* PhoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1C02547734500E3DA27 /* PhoneView.xib */; };
+		218CC1C62547750000E3DA27 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1C52547750000E3DA27 /* NewCardView.swift */; };
+		218CC1CE254779F000E3DA27 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1CD254779F000E3DA27 /* UserView.swift */; };
+		218CC1D6254780CA00E3DA27 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1D5254780CA00E3DA27 /* BirthdayView.swift */; };
+		218CC1DB254780D200E3DA27 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1DA254780D200E3DA27 /* LocationView.swift */; };
+		218CC1E3254780DC00E3DA27 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1E2254780DC00E3DA27 /* PhoneView.swift */; };
 		21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E572543BD62006EEC3A /* AppDelegate.swift */; };
 		21A88E5A2543BD62006EEC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E592543BD62006EEC3A /* SceneDelegate.swift */; };
 		21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A88E5D2543BD62006EEC3A /* Main.storyboard */; };
@@ -50,9 +63,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		217EFEB12548844100BC5697 /* PremiumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PremiumView.xib; sourceTree = "<group>"; };
+		217EFEB62548845200BC5697 /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		218CC15F254729F800E3DA27 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModelTests.swift; sourceTree = "<group>"; };
 		218CC17E25473A3200E3DA27 /* TinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModel.swift; sourceTree = "<group>"; };
+		218CC1A525475A6A00E3DA27 /* ConnectsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsViewModelTests.swift; sourceTree = "<group>"; };
+		218CC1AB2547719000E3DA27 /* NewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardView.xib; sourceTree = "<group>"; };
+		218CC1B0254772BE00E3DA27 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
+		218CC1B52547730F00E3DA27 /* BirthdayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayView.xib; sourceTree = "<group>"; };
+		218CC1BB2547733600E3DA27 /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
+		218CC1C02547734500E3DA27 /* PhoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneView.xib; sourceTree = "<group>"; };
+		218CC1C52547750000E3DA27 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+		218CC1CD254779F000E3DA27 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		218CC1D5254780CA00E3DA27 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		218CC1DA254780D200E3DA27 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		218CC1E2254780DC00E3DA27 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		21A88E542543BD62006EEC3A /* Tinder Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A88E572543BD62006EEC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21A88E592543BD62006EEC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +132,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		217EFEAC254879E000BC5697 /* Old Views */ = {
+			isa = PBXGroup;
+			children = (
+				21A88ECC25447D93006EEC3A /* CardView */,
+			);
+			path = "Old Views";
+			sourceTree = "<group>";
+		};
+		217EFEB02548842B00BC5697 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				217EFEB62548845200BC5697 /* PremiumView.swift */,
+				217EFEB12548844100BC5697 /* PremiumView.xib */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
 		218CC192254753C600E3DA27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +177,67 @@
 			isa = PBXGroup;
 			children = (
 				218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */,
+				218CC1A525475A6A00E3DA27 /* ConnectsViewModelTests.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		218CC1AA2547712900E3DA27 /* NewCardView */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1C52547750000E3DA27 /* NewCardView.swift */,
+				218CC1AB2547719000E3DA27 /* NewCardView.xib */,
+				218CC1BA2547731200E3DA27 /* SectionViews */,
+			);
+			path = NewCardView;
+			sourceTree = "<group>";
+		};
+		218CC1BA2547731200E3DA27 /* SectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1ED254789DB00E3DA27 /* User */,
+				218CC1EE254789E300E3DA27 /* Birthday */,
+				218CC1EF254789EC00E3DA27 /* Location */,
+				218CC1F0254789F200E3DA27 /* Phone */,
+				217EFEB02548842B00BC5697 /* Premium */,
+			);
+			path = SectionViews;
+			sourceTree = "<group>";
+		};
+		218CC1ED254789DB00E3DA27 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1CD254779F000E3DA27 /* UserView.swift */,
+				218CC1B0254772BE00E3DA27 /* UserView.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		218CC1EE254789E300E3DA27 /* Birthday */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1D5254780CA00E3DA27 /* BirthdayView.swift */,
+				218CC1B52547730F00E3DA27 /* BirthdayView.xib */,
+			);
+			path = Birthday;
+			sourceTree = "<group>";
+		};
+		218CC1EF254789EC00E3DA27 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1DA254780D200E3DA27 /* LocationView.swift */,
+				218CC1BB2547733600E3DA27 /* LocationView.xib */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		218CC1F0254789F200E3DA27 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				218CC1E2254780DC00E3DA27 /* PhoneView.swift */,
+				218CC1C02547734500E3DA27 /* PhoneView.xib */,
+			);
+			path = Phone;
 			sourceTree = "<group>";
 		};
 		21A88E4B2543BD62006EEC3A = {
@@ -198,6 +300,7 @@
 				21A88E602543BD64006EEC3A /* Assets.xcassets */,
 				21A88E572543BD62006EEC3A /* AppDelegate.swift */,
 				21A88E592543BD62006EEC3A /* SceneDelegate.swift */,
+				217EFEAC254879E000BC5697 /* Old Views */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -301,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */,
-				21A88ECC25447D93006EEC3A /* CardView */,
+				218CC1AA2547712900E3DA27 /* NewCardView */,
 				21A88EE0254480A3006EEC3A /* SwipeableView */,
 			);
 			path = Views;
@@ -440,7 +543,13 @@
 				21A88E642543BD64006EEC3A /* LaunchScreen.storyboard in Resources */,
 				21A88E612543BD64006EEC3A /* Assets.xcassets in Resources */,
 				21B827402544B24A009E9A53 /* CardView.xib in Resources */,
+				218CC1C12547734500E3DA27 /* PhoneView.xib in Resources */,
+				218CC1B62547731000E3DA27 /* BirthdayView.xib in Resources */,
+				218CC1B1254772BE00E3DA27 /* UserView.xib in Resources */,
+				217EFEB22548844100BC5697 /* PremiumView.xib in Resources */,
+				218CC1BC2547733600E3DA27 /* LocationView.xib in Resources */,
 				21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */,
+				218CC1AC2547719000E3DA27 /* NewCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,17 +597,23 @@
 				21B8273B2544B235009E9A53 /* CardView.swift in Sources */,
 				218CC17F25473A3200E3DA27 /* TinderViewModel.swift in Sources */,
 				21A88EF5254485E5006EEC3A /* NetworkManager.swift in Sources */,
+				218CC1D6254780CA00E3DA27 /* BirthdayView.swift in Sources */,
 				21FE8C22254527750052EFF7 /* ConnectsViewModel.swift in Sources */,
+				217EFEB72548845200BC5697 /* PremiumView.swift in Sources */,
 				21A88EE2254480C4006EEC3A /* TinderViewController.swift in Sources */,
 				21FE8C1B254527380052EFF7 /* ConnectsViewController.swift in Sources */,
 				21A88E962543BEF2006EEC3A /* User.swift in Sources */,
 				21A88EFD25448741006EEC3A /* TinderError.swift in Sources */,
 				21A88ECE25447EE1006EEC3A /* SwipeableCardView.swift in Sources */,
 				21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */,
+				218CC1E3254780DC00E3DA27 /* PhoneView.swift in Sources */,
 				21FE8C2A254528610052EFF7 /* ConnectTableViewCell.swift in Sources */,
+				218CC1C62547750000E3DA27 /* NewCardView.swift in Sources */,
 				21A88EC525447C50006EEC3A /* UIView+Ext.swift in Sources */,
+				218CC1CE254779F000E3DA27 /* UserView.swift in Sources */,
 				21A88ED325447F2D006EEC3A /* SwipeableView.swift in Sources */,
 				21A88E5A2543BD62006EEC3A /* SceneDelegate.swift in Sources */,
+				218CC1DB254780D200E3DA27 /* LocationView.swift in Sources */,
 				21A88EAD2543C83C006EEC3A /* CardsContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +625,7 @@
 				218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */,
 				218CC160254729F800E3DA27 /* UserTests.swift in Sources */,
 				21A88E6F2543BD64006EEC3A /* NetworkManagerTests.swift in Sources */,
+				218CC1A625475A6A00E3DA27 /* ConnectsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

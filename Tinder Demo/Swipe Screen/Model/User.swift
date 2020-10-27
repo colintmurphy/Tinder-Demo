@@ -19,6 +19,7 @@ struct User: Decodable {
     var location: Location?
     var birth: Birth?
     var picture: Picture?
+    var cell: String?
     
     var fullName: String {
         
@@ -54,6 +55,7 @@ struct User: Decodable {
         case location
         case birth = "dob"
         case picture
+        case cell
     }
 }
 
@@ -65,6 +67,7 @@ struct Name: Decodable {
 struct Location: Decodable {
     var city: String?
     var state: String?
+    var coordinates: Coordinates?
 }
 
 struct Birth: Decodable {
@@ -76,4 +79,9 @@ struct Picture: Decodable {
     var large: String?
     var medium: String?
     var thumbnail: String?
+}
+
+struct Coordinates: Decodable {
+    var latitude: String?
+    var longitude: String?
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationView" customModule="Tinder_Demo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Icd-c1-Yor" id="nVf-YG-bAR"/>
+                <outlet property="locationLabel" destination="eMG-6L-69f" id="rnj-tp-MwC"/>
+                <outlet property="mapView" destination="rcT-IK-fw8" id="083-8N-6rA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Icd-c1-Yor">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="491"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-IK-fw8">
+                    <rect key="frame" x="16" y="100" width="426" height="341"/>
+                </mapView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilmington, Delaware" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMG-6L-69f">
+                    <rect key="frame" x="16" y="60" width="426" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Qtd-a8-BxM"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rcT-IK-fw8" firstAttribute="leading" secondItem="Qtd-a8-BxM" secondAttribute="leading" constant="16" id="0Pj-78-3mq"/>
+                <constraint firstItem="Qtd-a8-BxM" firstAttribute="trailing" secondItem="rcT-IK-fw8" secondAttribute="trailing" constant="16" id="5RW-yU-RES"/>
+                <constraint firstItem="eMG-6L-69f" firstAttribute="leading" secondItem="Qtd-a8-BxM" secondAttribute="leading" constant="16" id="5sQ-fi-Pri"/>
+                <constraint firstItem="Qtd-a8-BxM" firstAttribute="bottom" secondItem="rcT-IK-fw8" secondAttribute="bottom" constant="16" id="FUX-WI-JrR"/>
+                <constraint firstItem="rcT-IK-fw8" firstAttribute="top" secondItem="eMG-6L-69f" secondAttribute="bottom" constant="16" id="PFR-7t-A0F"/>
+                <constraint firstItem="eMG-6L-69f" firstAttribute="top" secondItem="Qtd-a8-BxM" secondAttribute="top" constant="16" id="fKm-QN-DX3"/>
+                <constraint firstItem="Qtd-a8-BxM" firstAttribute="trailing" secondItem="eMG-6L-69f" secondAttribute="trailing" constant="16" id="v82-9Q-09S"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="360.86956521739131" y="-39.84375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

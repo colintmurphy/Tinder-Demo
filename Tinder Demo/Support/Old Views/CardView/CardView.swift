@@ -40,7 +40,6 @@ class CardView: SwipeableCardView {
     
     private func commonInit() {
         
-        //accessibilityIdentifier = "SwipeableView"
         Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds

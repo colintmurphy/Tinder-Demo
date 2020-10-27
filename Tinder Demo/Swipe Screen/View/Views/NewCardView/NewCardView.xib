@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewCardView" customModule="Tinder_Demo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentSubView" destination="F2R-dd-iio" id="Ykh-Kn-0Z2"/>
+                <outlet property="contentView" destination="G45-h6-OwR" id="eCq-8l-E0Y"/>
+                <outlet property="premiumBarItem" destination="55a-1S-CeY" id="TMa-dP-7W2"/>
+                <outlet property="selectedView" destination="vtd-va-Bb8" id="Bo6-aM-tNj"/>
+                <outlet property="tabBar" destination="BV6-d1-2GO" id="swY-JF-8Ea"/>
+                <outlet property="userBarItem" destination="lFo-66-7kQ" id="Wk1-b0-eno"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="G45-h6-OwR">
+            <rect key="frame" x="0.0" y="0.0" width="448" height="425"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2R-dd-iio">
+                    <rect key="frame" x="0.0" y="44" width="448" height="381"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtd-va-Bb8">
+                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-d1-2GO">
+                            <rect key="frame" x="0.0" y="298" width="448" height="83"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <items>
+                                <tabBarItem image="person" catalog="system" selectedImage="person.fill" id="lFo-66-7kQ"/>
+                                <tabBarItem tag="1" title="" image="giftcard" catalog="system" selectedImage="giftcard.fill" id="9et-6I-jvc"/>
+                                <tabBarItem tag="2" title="" image="map" catalog="system" selectedImage="map.fill" id="usV-sq-Fz4"/>
+                                <tabBarItem tag="3" image="phone" catalog="system" selectedImage="phone.fill" id="8uf-o2-u5p"/>
+                                <tabBarItem tag="4" title="" image="lock" catalog="system" selectedImage="lock.fill" id="55a-1S-CeY"/>
+                            </items>
+                        </tabBar>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="vtd-va-Bb8" firstAttribute="leading" secondItem="F2R-dd-iio" secondAttribute="leading" id="45W-fJ-czg"/>
+                        <constraint firstItem="vtd-va-Bb8" firstAttribute="top" secondItem="F2R-dd-iio" secondAttribute="top" id="Ai8-Hk-SeE"/>
+                        <constraint firstAttribute="bottom" secondItem="BV6-d1-2GO" secondAttribute="bottom" id="Keb-4r-rhM"/>
+                        <constraint firstItem="vtd-va-Bb8" firstAttribute="bottom" secondItem="BV6-d1-2GO" secondAttribute="top" id="WCw-zm-BKc"/>
+                        <constraint firstItem="BV6-d1-2GO" firstAttribute="leading" secondItem="F2R-dd-iio" secondAttribute="leading" id="f6x-7H-eEe"/>
+                        <constraint firstAttribute="trailing" secondItem="vtd-va-Bb8" secondAttribute="trailing" id="g6f-Rp-NdH"/>
+                        <constraint firstAttribute="trailing" secondItem="BV6-d1-2GO" secondAttribute="trailing" id="v3I-qn-NRf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="drv-77-Y7u"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="F2R-dd-iio" secondAttribute="bottom" id="HJJ-mk-X7h"/>
+                <constraint firstItem="F2R-dd-iio" firstAttribute="trailing" secondItem="drv-77-Y7u" secondAttribute="trailing" id="Oea-os-SKh"/>
+                <constraint firstItem="F2R-dd-iio" firstAttribute="leading" secondItem="drv-77-Y7u" secondAttribute="leading" id="u2M-bN-IMP"/>
+                <constraint firstItem="F2R-dd-iio" firstAttribute="top" secondItem="drv-77-Y7u" secondAttribute="top" id="yEF-3H-NmE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="220.28985507246378" y="-98.102678571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="giftcard" catalog="system" width="128" height="88"/>
+        <image name="giftcard.fill" catalog="system" width="128" height="88"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
+        <image name="lock.fill" catalog="system" width="128" height="128"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="phone" catalog="system" width="128" height="115"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardsContainerView: UIView {
+class CardsContainerView: SwipeableCardView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
