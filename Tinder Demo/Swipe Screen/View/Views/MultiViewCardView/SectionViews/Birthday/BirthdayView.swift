@@ -10,14 +10,20 @@ import UIKit
 //swiftlint:disable trailing_whitespace
 
 class BirthdayView: UIView {
+    
+    // MARK: - IBOutlets
 
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var monthLabel: UILabel!
     @IBOutlet weak private var yearLabel: UILabel!
     @IBOutlet weak private var ageLabel: UILabel!
     
-    private var datePicker: UIDatePicker!
+    // MARK: - Properties
+    
+    private var datePicker: UIDatePicker?
     private let formatter = DateFormatter()
+    
+    // MARK: - Inits
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,6 +39,8 @@ class BirthdayView: UIView {
         Bundle.main.loadNibNamed("BirthdayView", owner: self, options: nil)
         formatter.dateFormat = "yyyy-MM-dd"
     }
+    
+    // MARK: - Setup
     
     func setInfo(user: User) {
         
@@ -55,6 +63,7 @@ class BirthdayView: UIView {
     private func setupDatePicker(with date: Date) {
         
         datePicker = UIDatePicker()
+        guard let datePicker = datePicker else { return }
         datePicker.date = date
         datePicker.isUserInteractionEnabled = false
         datePicker.tintColor = .systemPink

@@ -22,8 +22,41 @@ class TinderViewController: UIViewController {
     // MARK: - View Life Cycles
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         viewModel = TinderViewModel(viewModelDelegate: self, containerViewBounds: cardsView.bounds)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(showAlert),
+            name: Notification.Name("ShowAlert"),
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(presentView),
+            name: Notification.Name("PresentView"),
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(dismissView),
+            name: Notification.Name("DismissView"),
+            object: nil)
+    }
+    
+    @objc private func showAlert(notification: NSNotification) {
+        
+        if let title = notification.userInfo?["title"] as? String,
+           let message = notification.userInfo?["message"] as? String {
+            presentAlert(title: title, message: message)
+        }
+    }
+    
+    @objc private func presentView(notification: NSNotification) { }
+    
+    @objc private func dismissView(notification: NSNotification) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -31,7 +64,7 @@ class TinderViewController: UIViewController {
 
 extension TinderViewController: TinderViewModelDelegate {
     
-    func addCardToContainer(card: NewCardView, at index: Int) {
+    func addCardToContainer(card: MultiViewCardView, at index: Int) {
         
         var cardViewFrame = cardsView.bounds
         let verticalInset = CGFloat(index) * CGFloat(14)

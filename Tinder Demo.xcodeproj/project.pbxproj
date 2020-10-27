@@ -13,16 +13,17 @@
 		218CC16825472C9500E3DA27 /* TinderViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */; };
 		218CC17F25473A3200E3DA27 /* TinderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC17E25473A3200E3DA27 /* TinderViewModel.swift */; };
 		218CC1A625475A6A00E3DA27 /* ConnectsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1A525475A6A00E3DA27 /* ConnectsViewModelTests.swift */; };
-		218CC1AC2547719000E3DA27 /* NewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1AB2547719000E3DA27 /* NewCardView.xib */; };
+		218CC1AC2547719000E3DA27 /* MultiViewCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1AB2547719000E3DA27 /* MultiViewCardView.xib */; };
 		218CC1B1254772BE00E3DA27 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1B0254772BE00E3DA27 /* UserView.xib */; };
 		218CC1B62547731000E3DA27 /* BirthdayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1B52547730F00E3DA27 /* BirthdayView.xib */; };
 		218CC1BC2547733600E3DA27 /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1BB2547733600E3DA27 /* LocationView.xib */; };
 		218CC1C12547734500E3DA27 /* PhoneView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218CC1C02547734500E3DA27 /* PhoneView.xib */; };
-		218CC1C62547750000E3DA27 /* NewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1C52547750000E3DA27 /* NewCardView.swift */; };
+		218CC1C62547750000E3DA27 /* MultiViewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1C52547750000E3DA27 /* MultiViewCardView.swift */; };
 		218CC1CE254779F000E3DA27 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1CD254779F000E3DA27 /* UserView.swift */; };
 		218CC1D6254780CA00E3DA27 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1D5254780CA00E3DA27 /* BirthdayView.swift */; };
 		218CC1DB254780D200E3DA27 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1DA254780D200E3DA27 /* LocationView.swift */; };
 		218CC1E3254780DC00E3DA27 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CC1E2254780DC00E3DA27 /* PhoneView.swift */; };
+		219FD9A72548AE9300037C79 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219FD9A62548AE9300037C79 /* UIViewController+Ext.swift */; };
 		21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E572543BD62006EEC3A /* AppDelegate.swift */; };
 		21A88E5A2543BD62006EEC3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A88E592543BD62006EEC3A /* SceneDelegate.swift */; };
 		21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A88E5D2543BD62006EEC3A /* Main.storyboard */; };
@@ -69,16 +70,17 @@
 		218CC16725472C9500E3DA27 /* TinderViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModelTests.swift; sourceTree = "<group>"; };
 		218CC17E25473A3200E3DA27 /* TinderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderViewModel.swift; sourceTree = "<group>"; };
 		218CC1A525475A6A00E3DA27 /* ConnectsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsViewModelTests.swift; sourceTree = "<group>"; };
-		218CC1AB2547719000E3DA27 /* NewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCardView.xib; sourceTree = "<group>"; };
+		218CC1AB2547719000E3DA27 /* MultiViewCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiViewCardView.xib; sourceTree = "<group>"; };
 		218CC1B0254772BE00E3DA27 /* UserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserView.xib; sourceTree = "<group>"; };
 		218CC1B52547730F00E3DA27 /* BirthdayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BirthdayView.xib; sourceTree = "<group>"; };
 		218CC1BB2547733600E3DA27 /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		218CC1C02547734500E3DA27 /* PhoneView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneView.xib; sourceTree = "<group>"; };
-		218CC1C52547750000E3DA27 /* NewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCardView.swift; sourceTree = "<group>"; };
+		218CC1C52547750000E3DA27 /* MultiViewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiViewCardView.swift; sourceTree = "<group>"; };
 		218CC1CD254779F000E3DA27 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		218CC1D5254780CA00E3DA27 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		218CC1DA254780D200E3DA27 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		218CC1E2254780DC00E3DA27 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		219FD9A62548AE9300037C79 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		21A88E542543BD62006EEC3A /* Tinder Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A88E572543BD62006EEC3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21A88E592543BD62006EEC3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,14 +184,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		218CC1AA2547712900E3DA27 /* NewCardView */ = {
+		218CC1AA2547712900E3DA27 /* MultiViewCardView */ = {
 			isa = PBXGroup;
 			children = (
-				218CC1C52547750000E3DA27 /* NewCardView.swift */,
-				218CC1AB2547719000E3DA27 /* NewCardView.xib */,
+				218CC1C52547750000E3DA27 /* MultiViewCardView.swift */,
+				218CC1AB2547719000E3DA27 /* MultiViewCardView.xib */,
 				218CC1BA2547731200E3DA27 /* SectionViews */,
 			);
-			path = NewCardView;
+			path = MultiViewCardView;
 			sourceTree = "<group>";
 		};
 		218CC1BA2547731200E3DA27 /* SectionViews */ = {
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				21A88EC425447C50006EEC3A /* UIView+Ext.swift */,
+				219FD9A62548AE9300037C79 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,7 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				21A88EAC2543C83C006EEC3A /* CardsContainerView.swift */,
-				218CC1AA2547712900E3DA27 /* NewCardView */,
+				218CC1AA2547712900E3DA27 /* MultiViewCardView */,
 				21A88EE0254480A3006EEC3A /* SwipeableView */,
 			);
 			path = Views;
@@ -549,7 +552,7 @@
 				217EFEB22548844100BC5697 /* PremiumView.xib in Resources */,
 				218CC1BC2547733600E3DA27 /* LocationView.xib in Resources */,
 				21A88E5F2543BD62006EEC3A /* Main.storyboard in Resources */,
-				218CC1AC2547719000E3DA27 /* NewCardView.xib in Resources */,
+				218CC1AC2547719000E3DA27 /* MultiViewCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +611,8 @@
 				21A88E582543BD62006EEC3A /* AppDelegate.swift in Sources */,
 				218CC1E3254780DC00E3DA27 /* PhoneView.swift in Sources */,
 				21FE8C2A254528610052EFF7 /* ConnectTableViewCell.swift in Sources */,
-				218CC1C62547750000E3DA27 /* NewCardView.swift in Sources */,
+				219FD9A72548AE9300037C79 /* UIViewController+Ext.swift in Sources */,
+				218CC1C62547750000E3DA27 /* MultiViewCardView.swift in Sources */,
 				21A88EC525447C50006EEC3A /* UIView+Ext.swift in Sources */,
 				218CC1CE254779F000E3DA27 /* UserView.swift in Sources */,
 				21A88ED325447F2D006EEC3A /* SwipeableView.swift in Sources */,

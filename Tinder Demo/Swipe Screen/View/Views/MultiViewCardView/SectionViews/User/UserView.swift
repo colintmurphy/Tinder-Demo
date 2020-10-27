@@ -11,9 +11,13 @@ import UIKit
 
 class UserView: UIView {
     
+    // MARK: - IBOutlets
+    
     @IBOutlet weak private var userImageView: UIImageView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var contentView: UIView!
+    
+    // MARK: - Inits
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,6 +39,8 @@ class UserView: UIView {
         userImageView.layer.borderWidth = 0.5
         userImageView.layer.borderColor = UIColor.lightGray.cgColor
     }
+    
+    // MARK: - Setup
     
     func setInfo(user: User) {
         

@@ -11,7 +11,7 @@ import UIKit
 
 protocol TinderViewModelDelegate: AnyObject {
     func failed(error: TinderError)
-    func addCardToContainer(card: NewCardView, at index: Int)
+    func addCardToContainer(card: MultiViewCardView, at index: Int)
 }
 
 class TinderViewModel {
@@ -24,7 +24,7 @@ class TinderViewModel {
     private let containerViewBounds: CGRect
     
     var users: [User] = []
-    var cardViews: [NewCardView] = []
+    var cardViews: [MultiViewCardView] = []
     var usersInContainer: [User] = []
     var connectsList: [User] = []
     
@@ -78,12 +78,11 @@ class TinderViewModel {
         updateFrames()
     }
     
-    private func createUserCardView(with user: User) -> NewCardView? {
+    private func createUserCardView(with user: User) -> MultiViewCardView? {
         
-        guard let imageUrl = user.picture?.large else { return nil }
-        let card = NewCardView()
+        guard (user.picture?.large) != nil else { return nil }
+        let card = MultiViewCardView()
         card.setInfo(user: user)
-        //card.setInfo(name: user.fullName, location: user.fullLocation, age: user.age, imageUrl: imageUrl)
         card.delegate = self
         cardViews.append(card)
         usersInContainer.append(user)
@@ -92,7 +91,7 @@ class TinderViewModel {
     
     // MARK: - Set Card Frames
     
-    private func setFrame(for cardView: NewCardView, at index: Int) -> NewCardView? {
+    private func setFrame(for cardView: MultiViewCardView, at index: Int) -> MultiViewCardView? {
         
         var cardViewFrame = containerViewBounds
         let verticalInset = CGFloat(index) * self.verticalInset

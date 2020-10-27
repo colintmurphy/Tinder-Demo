@@ -1,5 +1,5 @@
 //
-//  NewCardView.swift
+//  MultiViewCardView.swift
 //  Tinder Demo
 //
 //  Created by Colin Murphy on 10/26/20.
@@ -9,7 +9,7 @@ import UIKit
 
 //swiftlint:disable trailing_whitespace
 
-class NewCardView: SwipeableCardView {
+class MultiViewCardView: SwipeableCardView {
 
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var contentSubView: UIView!
@@ -22,6 +22,7 @@ class NewCardView: SwipeableCardView {
     
     private var itemView: UIView!
     private weak var shadowView: UIView?
+    
     private var user: User?
     
     // MARK: - Inits
@@ -40,7 +41,7 @@ class NewCardView: SwipeableCardView {
     
     private func commonInit() {
         
-        Bundle.main.loadNibNamed("NewCardView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("MultiViewCardView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -85,53 +86,35 @@ class NewCardView: SwipeableCardView {
     }
 }
 
-extension NewCardView: UITabBarDelegate {
+extension MultiViewCardView: UITabBarDelegate {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         
+        itemView.removeFromSuperview()
+        
         switch item.tag {
         case 0:
-            itemView.removeFromSuperview()
             itemView = UserView()
-            itemView.frame = selectedView.bounds
-            itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            selectedView.addSubview(itemView)
-            setInfoForView()
             
         case 1:
-            itemView.removeFromSuperview()
             itemView = BirthdayView()
-            itemView.frame = selectedView.bounds
-            itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            selectedView.addSubview(itemView)
-            setInfoForView()
             
         case 2:
-            itemView.removeFromSuperview()
             itemView = LocationView()
-            itemView.frame = selectedView.bounds
-            itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            selectedView.addSubview(itemView)
-            setInfoForView()
             
         case 3:
-            itemView.removeFromSuperview()
             itemView = PhoneView()
-            itemView.frame = selectedView.bounds
-            itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            selectedView.addSubview(itemView)
-            setInfoForView()
             
         case 4:
-            itemView.removeFromSuperview()
             itemView = PremiumView()
-            itemView.frame = selectedView.bounds
-            itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            selectedView.addSubview(itemView)
-            break
             
         default:
             break
         }
+        
+        itemView.frame = selectedView.bounds
+        itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        selectedView.addSubview(itemView)
+        setInfoForView()
     }
 }
