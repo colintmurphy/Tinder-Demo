@@ -7,22 +7,20 @@
 
 import UIKit
 
-//swiftlint:disable trailing_whitespace
-
 class BirthdayView: UIView {
-    
+
     // MARK: - IBOutlets
 
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var monthLabel: UILabel!
     @IBOutlet weak private var yearLabel: UILabel!
     @IBOutlet weak private var ageLabel: UILabel!
-    
+
     // MARK: - Properties
-    
+
     private var datePicker: UIDatePicker?
     private let formatter = DateFormatter()
-    
+
     // MARK: - Inits
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,21 +32,21 @@ class BirthdayView: UIView {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     private func commonInit() {
         Bundle.main.loadNibNamed("BirthdayView", owner: self, options: nil)
         formatter.dateFormat = "yyyy-MM-dd"
     }
-    
+
     // MARK: - Setup
-    
+
     func setInfo(user: User) {
-        
+
         guard let userBday = user.birth?.date else { return }
         let lastIndex = userBday.index(userBday.startIndex, offsetBy: 9)
         let bdayString = String(userBday[...lastIndex])
         guard let date = formatter.date(from: bdayString) else { return }
-        
+
         if #available(iOS 14.0, *) {
             setupDatePicker(with: date)
         } else {
@@ -58,10 +56,10 @@ class BirthdayView: UIView {
             #warning("setup for pre ios14")
         }
     }
-    
+
     @available(iOS 14.0, *)
     private func setupDatePicker(with date: Date) {
-        
+
         datePicker = UIDatePicker()
         guard let datePicker = datePicker else { return }
         datePicker.date = date
@@ -71,7 +69,7 @@ class BirthdayView: UIView {
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.frame = bounds
         addSubview(datePicker)
-        
+
         NSLayoutConstraint.activate([
             datePicker.centerYAnchor.constraint(equalTo: centerYAnchor),
             datePicker.centerXAnchor.constraint(equalTo: centerXAnchor),

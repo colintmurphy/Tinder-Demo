@@ -7,16 +7,14 @@
 
 import UIKit
 
-//swiftlint:disable trailing_whitespace
-
 class UserView: UIView {
-    
+
     // MARK: - IBOutlets
-    
+
     @IBOutlet weak private var userImageView: UIImageView!
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var contentView: UIView!
-    
+
     // MARK: - Inits
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,9 +26,9 @@ class UserView: UIView {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     private func commonInit() {
-        
+
         Bundle.main.loadNibNamed("UserView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
@@ -39,14 +37,14 @@ class UserView: UIView {
         userImageView.layer.borderWidth = 0.5
         userImageView.layer.borderColor = UIColor.lightGray.cgColor
     }
-    
+
     // MARK: - Setup
-    
+
     func setInfo(user: User) {
-        
+
         nameLabel.text = user.fullName
         guard let imageUrl = user.picture?.large else { return }
-        
+
         NetworkManager.shared.downloadImage(with: imageUrl) { results in
             switch results {
             case .success(let image):

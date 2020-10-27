@@ -7,22 +7,21 @@
 
 import Foundation
 
-//swiftlint:disable trailing_whitespace
-
 struct RandomUserResponse: Decodable {
     var results: [User]?
 }
 
 struct User: Decodable {
-    
+
     var name: Name?
     var location: Location?
     var birth: Birth?
     var picture: Picture?
     var cell: String?
-    
+
+    // MARK: Computed Properties
     var fullName: String {
-        
+
         guard let firstName = name?.first, !firstName.isEmpty else { return "" }
         if let lastName = name?.last, !lastName.isEmpty {
             return firstName + " " + lastName
@@ -30,9 +29,9 @@ struct User: Decodable {
             return firstName
         }
     }
-    
+
     var fullLocation: String {
-        
+
         var locationDetails = ""
         if let city = location?.city, !city.isEmpty {
             locationDetails = city
@@ -44,12 +43,13 @@ struct User: Decodable {
         }
         return locationDetails
     }
-    
+
     var age: String {
         guard let value = birth?.age else { return "" }
         return String(value)
     }
 
+    // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case name
         case location
@@ -58,6 +58,8 @@ struct User: Decodable {
         case cell
     }
 }
+
+// MARK: - Sub Structures
 
 struct Name: Decodable {
     var first: String?

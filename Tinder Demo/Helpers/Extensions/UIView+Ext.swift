@@ -7,12 +7,10 @@
 
 import UIKit
 
-//swiftlint:disable trailing_whitespace
-
 extension UIView {
-    
+
     func addShadow(to view: UIView) -> UIView {
-        
+
         let frame = CGRect(x: 0, y: 0,
                            width: view.bounds.width,
                            height: view.bounds.height)

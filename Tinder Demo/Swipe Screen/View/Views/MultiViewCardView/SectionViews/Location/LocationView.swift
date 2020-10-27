@@ -7,13 +7,15 @@
 
 import MapKit
 
-//swiftlint:disable trailing_whitespace
-
 class LocationView: UIView {
+
+    // MARK: - IBOutlets
 
     @IBOutlet weak private var locationLabel: UILabel!
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var contentView: UIView!
+
+    // MARK: - Inits
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,9 +26,9 @@ class LocationView: UIView {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     private func commonInit() {
-        
+
         Bundle.main.loadNibNamed("LocationView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
@@ -36,15 +38,17 @@ class LocationView: UIView {
         mapView.layer.borderColor = UIColor.lightGray.cgColor
         mapView.isUserInteractionEnabled = false
     }
-    
+
+    // MARK: - Setup
+
     func setInfo(user: User) {
-        
+
         locationLabel.text = user.fullLocation
         guard let latitudeString = user.location?.coordinates?.latitude,
               let latitude = Double(latitudeString),
               let longitudeString = user.location?.coordinates?.longitude,
               let longitude = Double(longitudeString) else { return }
-        
+
         let annotation = MKPointAnnotation()
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let span = MKCoordinateSpan(latitudeDelta: 50.0, longitudeDelta: 50.0)

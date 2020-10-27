@@ -7,9 +7,9 @@
 
 import UIKit
 
-//swiftlint:disable trailing_whitespace
-
 class MultiViewCardView: SwipeableCardView {
+
+    // MARK: - IBOutlets
 
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var contentSubView: UIView!
@@ -17,16 +17,15 @@ class MultiViewCardView: SwipeableCardView {
     @IBOutlet weak private var tabBar: UITabBar!
     @IBOutlet weak private var userBarItem: UITabBarItem!
     @IBOutlet weak private var premiumBarItem: UITabBarItem!
-    
+
     // MARK: - Properties
-    
+
     private var itemView: UIView!
     private weak var shadowView: UIView?
-    
     private var user: User?
-    
+
     // MARK: - Inits
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
@@ -36,27 +35,27 @@ class MultiViewCardView: SwipeableCardView {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     deinit { }
-    
+
     private func commonInit() {
-        
+
         Bundle.main.loadNibNamed("MultiViewCardView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.layer.cornerRadius = 10
-        
+
         itemView = UserView()
         itemView.frame = selectedView.bounds
         itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         selectedView.addSubview(itemView)
-        
+
         tabBar.delegate = self
         tabBar.selectedItem = userBarItem
         tabBar.tintColor = .systemPink
     }
-    
+
     // MARK: - Methods
 
     override func layoutSubviews() {
@@ -64,16 +63,16 @@ class MultiViewCardView: SwipeableCardView {
         guard shadowView == nil else { return }
         shadowView = addShadow(to: contentView)
     }
-    
+
     func setInfo(user: User) {
         self.user = user
         setInfoForView()
     }
-    
+
     private func setInfoForView() {
-        
+
         guard let user = user else { return }
-        
+
         if let view = itemView as? UserView {
             view.setInfo(user: user)
         } else if let view = itemView as? BirthdayView {
@@ -86,32 +85,34 @@ class MultiViewCardView: SwipeableCardView {
     }
 }
 
+// MARK: - UITabBarDelegate
+
 extension MultiViewCardView: UITabBarDelegate {
-    
+
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
+
         itemView.removeFromSuperview()
-        
+
         switch item.tag {
         case 0:
             itemView = UserView()
-            
+
         case 1:
             itemView = BirthdayView()
-            
+
         case 2:
             itemView = LocationView()
-            
+
         case 3:
             itemView = PhoneView()
-            
+
         case 4:
             itemView = PremiumView()
-            
+
         default:
             break
         }
-        
+
         itemView.frame = selectedView.bounds
         itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         selectedView.addSubview(itemView)
