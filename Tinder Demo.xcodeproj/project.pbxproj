@@ -242,6 +242,22 @@
 			path = Phone;
 			sourceTree = "<group>";
 		};
+		219FD9B42548CE1300037C79 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		219FD9B52548CE1A00037C79 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		21A88E4B2543BD62006EEC3A = {
 			isa = PBXGroup;
 			children = (
@@ -425,8 +441,8 @@
 		21FE8C1F2545275D0052EFF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */,
-				21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */,
+				219FD9B42548CE1300037C79 /* View Controller */,
+				219FD9B52548CE1A00037C79 /* TableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";

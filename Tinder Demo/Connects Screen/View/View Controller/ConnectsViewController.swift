@@ -19,6 +19,8 @@ class ConnectsViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var emptyLabel: UILabel!
+
     // MARK: - Properties
 
     var connectsViewModel: ConnectsViewModel?
@@ -31,13 +33,22 @@ class ConnectsViewController: UIViewController {
         super.viewDidLoad()
         if let navController = tabBarController?.viewControllers?.first as? UINavigationController,
            let tinderView = navController.viewControllers.first as? TinderViewController {
-            connectsViewModel = ConnectsViewModel(dataSource: tinderView.viewModel)
+            connectsViewModel = ConnectsViewModel(delegate: self, dataSource: tinderView.viewModel)
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+}
+
+// MARK: - ConnectsViewModelDelegate
+
+extension ConnectsViewController: ConnectsViewModelDelegate {
+
+    func hideEmptyConnectsLabel() {
+        emptyLabel.isHidden = true
     }
 }
 

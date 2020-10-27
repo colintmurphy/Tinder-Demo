@@ -54,6 +54,12 @@ class MultiViewCardView: SwipeableCardView {
         tabBar.delegate = self
         tabBar.selectedItem = userBarItem
         tabBar.tintColor = .systemPink
+
+        // MARK: Fix custom tabBarIcons' alignment
+        tabBar.items![1].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        tabBar.items![2].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        tabBar.items![3].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: -10, right: 0)
+        tabBar.items![4].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
     }
 
     // MARK: - Methods

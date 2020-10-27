@@ -17,7 +17,7 @@ class ConnectsViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         testData = ConnectsDataSourceTestClass()
-        connectViewModel = ConnectsViewModel(dataSource: testData)
+        connectViewModel = ConnectsViewModel(delegate: nil, dataSource: testData)
     }
     override func tearDownWithError() throws {
         testData = nil
@@ -41,7 +41,7 @@ class ConnectsViewModelTests: XCTestCase {
     }
 }
 
-fileprivate class ConnectsDataSourceTestClass: ConnectsDataSource {
+private class ConnectsDataSourceTestClass: ConnectsDataSource {
     
     let users: [User] = [
         User(name: Name(first: "Colin", last: "Murphy"),

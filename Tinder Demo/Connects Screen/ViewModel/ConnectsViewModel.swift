@@ -12,22 +12,34 @@ protocol ConnectsDataSource: AnyObject {
     func getConnect(at index: Int) -> User?
 }
 
+protocol ConnectsViewModelDelegate: AnyObject {
+    func hideEmptyConnectsLabel()
+}
+
 class ConnectsViewModel {
 
     // MARK: - Properties
 
     weak var dataSource: ConnectsDataSource?
+    weak var delegate: ConnectsViewModelDelegate?
 
     // MARK: - Inits
 
-    init(dataSource: ConnectsDataSource?) {
+    init(delegate: ConnectsViewModelDelegate?, dataSource: ConnectsDataSource?) {
+        self.delegate = delegate
         self.dataSource = dataSource
     }
 
     // MARK: - Getters
 
     func getConnectsCount() -> Int {
-        return dataSource?.getConnectsCount() ?? 0
+
+        if let count = dataSource?.getConnectsCount(),
+           count > 0 {
+            delegate?.hideEmptyConnectsLabel()
+            return count
+        }
+        return 0
     }
 
     func getUser(at index: Int) -> User? {

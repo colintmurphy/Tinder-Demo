@@ -12,6 +12,11 @@ class TinderViewController: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet private weak var cardsView: CardsContainerView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.hidesWhenStopped = true
+        }
+    }
 
     // MARK: - Properties
 
@@ -67,6 +72,14 @@ class TinderViewController: UIViewController {
 // MARK: - TinderViewModelDelegate
 
 extension TinderViewController: TinderViewModelDelegate {
+
+    func startActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
 
     func addCardToContainer(card: SwipeableCardView, at index: Int) {
 

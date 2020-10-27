@@ -10,6 +10,8 @@ import UIKit
 protocol TinderViewModelDelegate: AnyObject {
     func failed(error: TinderError)
     func addCardToContainer(card: SwipeableCardView, at index: Int)
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 class TinderViewModel {
@@ -41,7 +43,9 @@ class TinderViewModel {
 
     private func loadUsers() {
 
+        viewModelDelegate?.startActivityIndicator()
         NetworkManager.shared.fetchUsers(RandomUserResponse.self) { result in
+            self.viewModelDelegate?.stopActivityIndicator()
             switch result {
             case .success(let response):
                 if let users = response.results {

@@ -100,7 +100,7 @@ class TinderViewModelTests: XCTestCase {
     }
 }
 
-fileprivate class TinderViewTestClass: TinderViewModelDelegate {
+private class TinderViewTestClass: TinderViewModelDelegate {
     
     var view = UIView()
     

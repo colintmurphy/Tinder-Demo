@@ -28,18 +28,21 @@
                     <rect key="frame" x="0.0" y="44" width="448" height="381"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtd-va-Bb8">
-                            <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
+                            <rect key="frame" x="0.0" y="0.0" width="448" height="306"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
-                        <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-d1-2GO">
-                            <rect key="frame" x="0.0" y="298" width="448" height="83"/>
+                        <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-d1-2GO">
+                            <rect key="frame" x="0.0" y="306" width="448" height="75"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="zmL-7c-BQr"/>
+                            </constraints>
                             <items>
-                                <tabBarItem image="person" catalog="system" selectedImage="person.fill" id="lFo-66-7kQ"/>
-                                <tabBarItem tag="1" title="" image="giftcard" catalog="system" selectedImage="giftcard.fill" id="9et-6I-jvc"/>
-                                <tabBarItem tag="2" title="" image="map" catalog="system" selectedImage="map.fill" id="usV-sq-Fz4"/>
-                                <tabBarItem tag="3" image="phone" catalog="system" selectedImage="phone.fill" id="8uf-o2-u5p"/>
-                                <tabBarItem tag="4" title="" image="lock" catalog="system" selectedImage="lock.fill" id="55a-1S-CeY"/>
+                                <tabBarItem image="icons8-user" id="lFo-66-7kQ"/>
+                                <tabBarItem tag="1" title="" image="icons8-birthday" id="9et-6I-jvc"/>
+                                <tabBarItem tag="2" title="" image="icons8-place_marker" id="usV-sq-Fz4"/>
+                                <tabBarItem tag="3" image="icons8-phone" id="8uf-o2-u5p"/>
+                                <tabBarItem tag="4" title="" image="icons8-best_seller" id="55a-1S-CeY"/>
                             </items>
                         </tabBar>
                     </subviews>
@@ -68,16 +71,11 @@
         </view>
     </objects>
     <resources>
-        <image name="giftcard" catalog="system" width="128" height="88"/>
-        <image name="giftcard.fill" catalog="system" width="128" height="88"/>
-        <image name="lock" catalog="system" width="128" height="128"/>
-        <image name="lock.fill" catalog="system" width="128" height="128"/>
-        <image name="map" catalog="system" width="128" height="110"/>
-        <image name="map.fill" catalog="system" width="128" height="110"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="phone" catalog="system" width="128" height="115"/>
-        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <image name="icons8-best_seller" width="32" height="32"/>
+        <image name="icons8-birthday" width="32" height="32"/>
+        <image name="icons8-phone" width="32" height="32"/>
+        <image name="icons8-place_marker" width="32" height="32"/>
+        <image name="icons8-user" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
