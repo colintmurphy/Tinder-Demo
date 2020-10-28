@@ -18,8 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-ut-Vug" customClass="CardsContainerView" customModule="Tinder_Demo" customModuleProvider="target">
-                                <rect key="frame" x="32" y="206.5" width="350" height="448"/>
+                                <rect key="frame" x="44.5" y="176.5" width="325" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="uW0-7c-4sg"/>
+                                </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="826-Wo-RqF">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
@@ -28,12 +31,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="FbI-ut-Vug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="88Q-MI-gzN"/>
                             <constraint firstItem="826-Wo-RqF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A6K-eB-sGn"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="DMO-ua-qjw"/>
+                            <constraint firstItem="FbI-ut-Vug" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LDA-Uh-il9"/>
                             <constraint firstItem="826-Wo-RqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SK0-F5-TFm"/>
-                            <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-20" id="bLI-fj-ZyU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FbI-ut-Vug" secondAttribute="trailing" constant="32" id="lDJ-d0-saW"/>
+                            <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="bLI-fj-ZyU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Potential Connects" id="Wo0-rS-tTO"/>

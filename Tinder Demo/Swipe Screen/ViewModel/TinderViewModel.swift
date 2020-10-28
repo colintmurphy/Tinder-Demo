@@ -100,7 +100,7 @@ class TinderViewModel {
         let horizontalInset = (CGFloat(index) * self.horizontalInset)
 
         cardViewFrame.origin.y += verticalInset
-        cardViewFrame.origin.x += (horizontalInset - self.horizontalInset)
+        cardViewFrame.origin.x += horizontalInset//(horizontalInset - self.horizontalInset)
         cardViewFrame.size.width -= 2 * horizontalInset
         cardView.frame = cardViewFrame
         return cardView
@@ -122,17 +122,25 @@ extension TinderViewModel: SwipeableViewDelegate {
 
     func didSwipeLeft(on view: SwipeableView) {
 
-        cardViews.removeFirst()
+        let card = cardViews.removeFirst()
         usersInContainer.removeFirst()
         insertNewCard()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            card.removeFromSuperview()
+        }
     }
 
     func didSwipeRight(on view: SwipeableView) {
 
-        cardViews.removeFirst()
+        let card = cardViews.removeFirst()
         let user = usersInContainer.removeFirst()
         connectsList.append(user)
         insertNewCard()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            card.removeFromSuperview()
+        }
     }
 }
 

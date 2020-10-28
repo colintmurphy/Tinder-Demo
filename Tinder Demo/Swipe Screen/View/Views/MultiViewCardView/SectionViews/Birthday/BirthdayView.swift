@@ -47,17 +47,10 @@ class BirthdayView: UIView {
         let bdayString = String(userBday[...lastIndex])
         guard let date = formatter.date(from: bdayString) else { return }
 
-        if #available(iOS 14.0, *) {
-            setupDatePicker(with: date)
-        } else {
-            addSubview(contentView)
-            contentView.frame = bounds
-            contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            #warning("setup for pre ios14")
-        }
+        setupDatePicker(with: date)
+
     }
 
-    @available(iOS 14.0, *)
     private func setupDatePicker(with date: Date) {
 
         datePicker = UIDatePicker()
@@ -65,9 +58,14 @@ class BirthdayView: UIView {
         datePicker.date = date
         datePicker.isUserInteractionEnabled = false
         datePicker.tintColor = .systemPink
-        datePicker.preferredDatePickerStyle = .inline
+        datePicker.datePickerMode = .date
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         datePicker.frame = bounds
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .inline
+        } else {
+            // Fallback on earlier versions
+        }
         addSubview(datePicker)
 
         NSLayoutConstraint.activate([

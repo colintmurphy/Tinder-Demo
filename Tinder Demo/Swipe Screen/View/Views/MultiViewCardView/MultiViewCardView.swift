@@ -51,6 +51,8 @@ class MultiViewCardView: SwipeableCardView {
         itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         selectedView.addSubview(itemView)
 
+        #warning("tabBar items not alligned on ipad")
+
         tabBar.delegate = self
         tabBar.selectedItem = userBarItem
         tabBar.tintColor = .systemPink

@@ -29,6 +29,8 @@ class TinderViewController: UIViewController {
         super.viewDidLoad()
         viewModel = TinderViewModel(viewModelDelegate: self, containerViewBounds: cardsView.bounds)
         setupNotificationObservers()
+
+        #warning("buttons for like/dislike at top")
     }
 
     // MARK: - Notification Observers

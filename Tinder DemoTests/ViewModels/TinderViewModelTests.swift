@@ -104,9 +104,11 @@ private class TinderViewTestClass: TinderViewModelDelegate {
     
     var view = UIView()
     
-    func failed(error: TinderError) { }
-    
-    func addCardToContainer(card: CardView, at index: Int) {
+    func addCardToContainer(card: SwipeableCardView, at index: Int) {
         view.insertSubview(card, at: index)
     }
+    
+    func startActivityIndicator() { }
+    func stopActivityIndicator() { }
+    func failed(error: TinderError) { }
 }
