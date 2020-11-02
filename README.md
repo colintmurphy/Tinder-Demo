@@ -22,7 +22,7 @@ App displays Tinder's swiping on card functionality (WIP: need to add match func
 - SQLite3
 - API: https://randomuser.me/api/?results=50
 
-# Update:
+### Update:
 - updated UI to remove time in calendar section of user profile
 
 ## Gifs
