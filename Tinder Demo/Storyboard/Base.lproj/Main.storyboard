@@ -27,15 +27,42 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="826-Wo-RqF">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZB7-KF-tDI">
+                                <rect key="frame" x="142" y="699.5" width="130" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anm-nk-lR9">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="75"/>
+                                        <state key="normal" image="icons8-delete"/>
+                                        <connections>
+                                            <action selector="dislikeUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vQ-gZ-WFX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prL-47-yic">
+                                        <rect key="frame" x="65" y="0.0" width="65" height="75"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="icons8-heart_outline"/>
+                                        <state key="selected" image="icons8-heart_outline"/>
+                                        <connections>
+                                            <action selector="likeUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOC-y2-6Xo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="KwZ-6g-LMO"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
+                            <constraint firstItem="ZB7-KF-tDI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3Ne-zp-8IN"/>
                             <constraint firstItem="826-Wo-RqF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A6K-eB-sGn"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="DMO-ua-qjw"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LDA-Uh-il9"/>
                             <constraint firstItem="826-Wo-RqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SK0-F5-TFm"/>
                             <constraint firstItem="FbI-ut-Vug" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-50" id="bLI-fj-ZyU"/>
+                            <constraint firstItem="ZB7-KF-tDI" firstAttribute="top" secondItem="FbI-ut-Vug" secondAttribute="bottom" constant="75" id="kUa-Xf-ib9"/>
+                            <constraint firstItem="ZB7-KF-tDI" firstAttribute="width" secondItem="FbI-ut-Vug" secondAttribute="width" multiplier="2:5" id="qs0-Kv-IFL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Potential Connects" id="Wo0-rS-tTO"/>
@@ -80,13 +107,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-LQ-71D">
                                                             <rect key="frame" x="0.0" y="0.0" width="253" height="24"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Colin Murphy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-V5-Pop">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colin Murphy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-V5-Pop">
                                                                     <rect key="frame" x="0.0" y="0.0" width="218" height="24"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdF-pI-IEy">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdF-pI-IEy">
                                                                     <rect key="frame" x="218" y="0.0" width="35" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="35" id="Cbd-Ag-UeI"/>
@@ -106,7 +133,7 @@
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-qC-naH">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-qC-naH">
                                                                     <rect key="frame" x="218" y="0.0" width="35" height="50"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="35" id="jhn-GS-31g"/>
@@ -198,7 +225,7 @@
         <scene sceneID="keK-Wz-s19">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3ac-zO-WKc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="person.3" catalog="system" id="WtQ-33-oIQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-user_group" id="WtQ-33-oIQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="duU-Qr-0u4">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -217,7 +244,7 @@
         <scene sceneID="27c-vN-WR2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GWd-U6-y3F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="flame" catalog="system" id="exF-Xv-faz"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-fire" id="exF-Xv-faz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bj0-pU-bMS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -237,8 +264,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flame" catalog="system" width="108" height="128"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="icons8-delete" width="32" height="32"/>
+        <image name="icons8-fire" width="32" height="32"/>
+        <image name="icons8-heart_outline" width="32" height="32"/>
+        <image name="icons8-user_group" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

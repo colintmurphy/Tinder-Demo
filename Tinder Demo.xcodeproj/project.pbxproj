@@ -44,6 +44,7 @@
 		21FE8C1B254527380052EFF7 /* ConnectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */; };
 		21FE8C22254527750052EFF7 /* ConnectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */; };
 		21FE8C2A254528610052EFF7 /* ConnectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */; };
+		21FF335B254F8CE300909E36 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FF335A254F8CE300909E36 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		21FE8C1A254527380052EFF7 /* ConnectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010ConnectsViewController.swift"; sourceTree = "<group>"; };
 		21FE8C21254527750052EFF7 /* ConnectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectsViewModel.swift; sourceTree = "<group>"; };
 		21FE8C29254528610052EFF7 /* ConnectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectTableViewCell.swift; sourceTree = "<group>"; };
+		21FF335A254F8CE300909E36 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		21FF335F254F946600909E36 /* TinderDemoStorage.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = TinderDemoStorage.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				21A88EF4254485E5006EEC3A /* NetworkManager.swift */,
+				21FF335A254F8CE300909E36 /* DatabaseManager.swift */,
+				21FF335F254F946600909E36 /* TinderDemoStorage.db */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				21A88EF5254485E5006EEC3A /* NetworkManager.swift in Sources */,
 				218CC1D6254780CA00E3DA27 /* BirthdayView.swift in Sources */,
 				21FE8C22254527750052EFF7 /* ConnectsViewModel.swift in Sources */,
+				21FF335B254F8CE300909E36 /* DatabaseManager.swift in Sources */,
 				217EFEB72548845200BC5697 /* PremiumView.swift in Sources */,
 				21A88EE2254480C4006EEC3A /* TinderViewController.swift in Sources */,
 				21FE8C1B254527380052EFF7 /* ConnectsViewController.swift in Sources */,

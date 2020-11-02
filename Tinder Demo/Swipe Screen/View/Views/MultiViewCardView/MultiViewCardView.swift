@@ -44,24 +44,26 @@ class MultiViewCardView: SwipeableCardView {
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.layer.cornerRadius = 10
+        contentView.layer.cornerRadius = 15
 
         itemView = UserView()
         itemView.frame = selectedView.bounds
         itemView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         selectedView.addSubview(itemView)
 
-        #warning("tabBar items not alligned on ipad")
-
         tabBar.delegate = self
         tabBar.selectedItem = userBarItem
         tabBar.tintColor = .systemPink
 
         // MARK: Fix custom tabBarIcons' alignment
-        tabBar.items![1].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
-        tabBar.items![2].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
-        tabBar.items![3].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: -10, right: 0)
-        tabBar.items![4].imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        guard let itemOne     = tabBar.items?[1],
+              let itemTwo     = tabBar.items?[2],
+              let itemThree   = tabBar.items?[3],
+              let itemFour    = tabBar.items?[4] else { return }
+        itemOne.imageInsets   = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        itemTwo.imageInsets   = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
+        itemThree.imageInsets = UIEdgeInsets(top: -5, left: 0, bottom: -10, right: 0)
+        itemFour.imageInsets  = UIEdgeInsets(top: -5, left: 0, bottom: 5, right: 0)
     }
 
     // MARK: - Methods

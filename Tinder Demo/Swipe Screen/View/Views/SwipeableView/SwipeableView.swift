@@ -94,4 +94,22 @@ class SwipeableView: UIView {
             card.center = move
         }
     }
+
+    func swipeRight() {
+
+        delegate?.didSwipeRight(on: self)
+        UIView.animate(withDuration: 0.4) {
+            self.center = CGPoint(x: self.initialCenter.x + 500,
+                                  y: self.initialCenter.y)
+        }
+    }
+
+    func swipeLeft() {
+
+        delegate?.didSwipeLeft(on: self)
+        UIView.animate(withDuration: 0.4) {
+            self.center = CGPoint(x: self.initialCenter.x - 500,
+                                  y: self.initialCenter.y)
+        }
+    }
 }

@@ -9,7 +9,9 @@ import UIKit
 
 protocol TinderViewModelDelegate: AnyObject {
     func failed(error: TinderError)
+    func showAlert(title: String, message: String)
     func addCardToContainer(card: SwipeableCardView, at index: Int)
+    func dismissView()
     func startActivityIndicator()
     func stopActivityIndicator()
 }
@@ -36,12 +38,52 @@ class TinderViewModel {
 
         self.viewModelDelegate = viewModelDelegate
         self.containerViewBounds = containerViewBounds
+        setupNotificationObservers()
         loadUsers()
+    }
+
+    // MARK: - Notification Observers
+
+    private func setupNotificationObservers() {
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(showAlert),
+            name: Notification.Name("ShowAlert"),
+            object: nil)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(presentView),
+            name: Notification.Name("PresentView"),
+            object: nil)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(dismissView),
+            name: Notification.Name("DismissView"),
+            object: nil)
+    }
+
+    @objc private func showAlert(notification: NSNotification) {
+
+        if let title = notification.userInfo?["title"] as? String,
+           let message = notification.userInfo?["message"] as? String {
+            viewModelDelegate?.showAlert(title: title, message: message)
+        }
+    }
+
+    @objc private func presentView(notification: NSNotification) { }
+
+    @objc private func dismissView(notification: NSNotification) {
+        viewModelDelegate?.dismissView()
     }
 
     // MARK: - Load Users
 
     private func loadUsers() {
+
+        connectsList = DatabaseManager.shared.readAll()
 
         viewModelDelegate?.startActivityIndicator()
         NetworkManager.shared.fetchUsers(RandomUserResponse.self) { result in
@@ -136,11 +178,22 @@ extension TinderViewModel: SwipeableViewDelegate {
         let card = cardViews.removeFirst()
         let user = usersInContainer.removeFirst()
         connectsList.append(user)
+        try? DatabaseManager.shared.insert(user: user)
         insertNewCard()
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             card.removeFromSuperview()
         }
+    }
+
+    func swipeRightViaButton() {
+        guard let card = cardViews.first else { return }
+        card.swipeRight()
+    }
+
+    func swipeLeftViaButton() {
+        guard let card = cardViews.first else { return }
+        card.swipeLeft()
     }
 }
 

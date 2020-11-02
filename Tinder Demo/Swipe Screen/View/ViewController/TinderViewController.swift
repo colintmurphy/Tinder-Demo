@@ -25,49 +25,18 @@ class TinderViewController: UIViewController {
     // MARK: - View Life Cycles
 
     override func viewDidLoad() {
-
         super.viewDidLoad()
         viewModel = TinderViewModel(viewModelDelegate: self, containerViewBounds: cardsView.bounds)
-        setupNotificationObservers()
-
-        #warning("buttons for like/dislike at top")
     }
 
-    // MARK: - Notification Observers
+    // MARK: - Swipe Button Actions
 
-    private func setupNotificationObservers() {
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(showAlert),
-            name: Notification.Name("ShowAlert"),
-            object: nil)
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(presentView),
-            name: Notification.Name("PresentView"),
-            object: nil)
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(dismissView),
-            name: Notification.Name("DismissView"),
-            object: nil)
+    @IBAction private func likeUser(_ sender: Any) {
+        viewModel?.swipeRightViaButton()
     }
 
-    @objc private func showAlert(notification: NSNotification) {
-
-        if let title = notification.userInfo?["title"] as? String,
-           let message = notification.userInfo?["message"] as? String {
-            presentAlert(title: title, message: message)
-        }
-    }
-
-    @objc private func presentView(notification: NSNotification) { }
-
-    @objc private func dismissView(notification: NSNotification) {
-        dismiss(animated: true, completion: nil)
+    @IBAction private func dislikeUser(_ sender: Any) {
+        viewModel?.swipeLeftViaButton()
     }
 }
 
@@ -84,17 +53,15 @@ extension TinderViewController: TinderViewModelDelegate {
     }
 
     func addCardToContainer(card: SwipeableCardView, at index: Int) {
-
-        var cardViewFrame = cardsView.bounds
-        let verticalInset = CGFloat(index) * CGFloat(14)
-        let horizontalInset = (CGFloat(index) * CGFloat(14))
-
-        cardViewFrame.origin.y += verticalInset
-        cardViewFrame.origin.x += horizontalInset //For CardView: (horizontalInset - CGFloat(14))
-        cardViewFrame.size.width -= 2 * horizontalInset
-        card.frame = cardViewFrame
-
         cardsView.insertSubview(card, at: index)
+    }
+
+    func showAlert(title: String, message: String) {
+        presentAlert(title: title, message: message)
+    }
+
+    func dismissView() {
+        dismiss(animated: true, completion: nil)
     }
 
     func failed(error: TinderError) {
