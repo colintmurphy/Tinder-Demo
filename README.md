@@ -4,6 +4,7 @@ App displays Tinder's swiping on card functionality (WIP: need to add match func
 ## Capabilities
 - swipe right to add connects to your connects list
 - view users' information
+- persistence storage to keep track of user's connnects
 
 
 ## Utilizes
@@ -18,10 +19,11 @@ App displays Tinder's swiping on card functionality (WIP: need to add match func
 - Custom SwipeableView
 - MVVM Design Pattern
 - TDD
+- SQLite3
 - API: https://randomuser.me/api/?results=50
 
 ## Gifs
 <p align="center">
   <img src="https://github.com/colintmurphy/Tinder-Demo/blob/main/gif/ezgif.com-gif-maker.gif" height="600" />
 </p>
-
+update UI to remove time in calendar section of user profile
