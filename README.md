@@ -22,8 +22,10 @@ App displays Tinder's swiping on card functionality (WIP: need to add match func
 - SQLite3
 - API: https://randomuser.me/api/?results=50
 
+# Update:
+- updated UI to remove time in calendar section of user profile
+
 ## Gifs
 <p align="center">
   <img src="https://github.com/colintmurphy/Tinder-Demo/blob/main/gif/ezgif.com-gif-maker.gif" height="600" />
 </p>
-update UI to remove time in calendar section of user profile
